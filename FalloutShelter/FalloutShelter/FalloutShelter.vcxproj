@@ -19,7 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="Hall.cpp" />
+    <ClCompile Include="Human.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Tile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="Hall.h" />
+    <ClInclude Include="Human.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Tile.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
