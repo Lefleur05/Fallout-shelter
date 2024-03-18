@@ -4,7 +4,7 @@
 #include "Canvas.h"
 #include "Button.h"
 #include <string>
-//#include "ScrollBar.h"
+#include "ScrollBar.h"
 
 class HUD : public Singleton<HUD>, public IManager<string, Canvas>
 {

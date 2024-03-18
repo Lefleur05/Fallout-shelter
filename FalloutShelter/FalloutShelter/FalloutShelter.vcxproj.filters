@@ -102,6 +102,9 @@
     <ClCompile Include="Widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ScrollBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -186,6 +189,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Widget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

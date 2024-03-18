@@ -40,6 +40,7 @@
     <ClCompile Include="Macro.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ScrollBar.cpp" />
     <ClCompile Include="ShapeObject.cpp" />
     <ClCompile Include="ShapeWidget.cpp" />
     <ClCompile Include="Singleton.cpp" />
@@ -70,6 +71,7 @@
     <ClInclude Include="Kismet.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ScrollBar.h" />
     <ClInclude Include="ShapeObject.h" />
     <ClInclude Include="ShapeWidget.h" />
     <ClInclude Include="Singleton.h" />
