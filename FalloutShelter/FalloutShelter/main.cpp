@@ -2,9 +2,7 @@
 #include "Map.h"
 #include "Hall.h"
 #include "Man.h"
-#include<iostream>
 
-using namespace std;
 
 
 int main()
@@ -24,7 +22,7 @@ int main()
 	cout << _map->GetGrid()->GetAllTiles()[0][0] << endl;*/
 
 
-	Man* _man = new Man(Vector2f(10.0f,10.0f));
+	//Man* _man = new Man(Vector2f(10.0f,10.0f));
 	
 
 

@@ -21,6 +21,12 @@ class Hall
 	vector<Human*> humans;
 
 public:
+	HallType GetType() 
+	{
+		return type;
+	}
+
+public:
 	Hall(HallType _type);
 
 
