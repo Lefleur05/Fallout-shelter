@@ -11,7 +11,6 @@ using namespace std;
 class Game
 {
 	Map* map;
-	vector< Button*> buttons;
 
 	Zombie* zombie;
 
