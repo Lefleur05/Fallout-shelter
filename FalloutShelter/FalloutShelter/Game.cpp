@@ -1,26 +1,24 @@
 #include "Game.h"
 #include "MapManager.h"
 #include "GameWindow.h"
+#include "HUD.h"
+#include "InputManager.h"
 
 Game::Game()
 {
 	map = nullptr;
-	buttons = vector<Button*>();
 	Init();
 }
 
 Game::~Game()
 {
-	delete map;
-	for (Button* _button: buttons)
-	{
-		delete _button;
-	}
+
 }
 
 void Game::Init()
 {
 	InitMap();
+	InitButton();
 }
 
 void Game::InitMap()
@@ -36,8 +34,30 @@ void Game::InitMap()
 
 void Game::InitButton()
 {
+	Canvas* _canvas = new Canvas("Button");
 
+	Button* _modeBuildButton = new Button(ShapeData(Vector2f(1000,700), Vector2f(100.0f, 100.0f)), ButtonData());
+	Button* _modeExplorationButton = new Button(ShapeData(Vector2f(100, 100), Vector2f(100.0f, 100.0f)), ButtonData());
+	Button* _villagerInfoButton = new Button(ShapeData(Vector2f(100, 700), Vector2f(100.0f, 100.0f)), ButtonData());
 
+	_modeBuildButton->GetData().hoveredCallback = [&]()
+	{
+		cout << "mode build" << endl;
+	};
+
+	_modeExplorationButton->GetData().hoveredCallback = [&]()
+	{
+		cout << "mode Exploration" << endl;
+	};
+
+	_villagerInfoButton->GetData().hoveredCallback = [&]()
+	{
+		cout << "villager Info" << endl;
+	};
+
+	_canvas->AddWidget(_modeBuildButton);
+	_canvas->AddWidget(_modeExplorationButton);
+	_canvas->AddWidget(_villagerInfoButton);
 }
 
 void Game::Update()
@@ -49,6 +69,9 @@ void Game::Update()
 		{
 			if (_event.type == Event::Closed)WINDOW->close();
 		}
+
+		InputManager::GetInstance().Update(*WINDOW);
+
 
 		UpdateWindow();
 	}
@@ -62,6 +85,15 @@ void Game::UpdateWindow()
 	for (Drawable* _drawables: MapManager::GetInstance().GetDrawables())
 	{
 		WINDOW->draw(*_drawables);
+	}
+
+	for (Canvas* _canvas : HUD::GetInstance().GetAllValues())
+	{
+		for (Widget* _widget : _canvas->GetUiWidgets())
+		{
+			WINDOW->draw(*_widget->GetDrawable());
+
+		}
 	}
 
 	WINDOW->display();
