@@ -1,4 +1,4 @@
-//#include "Game.h"
+#include "Game.h"
 #include "Map.h"
 #include "Hall.h"
 #include "Man.h"
@@ -7,10 +7,10 @@
 
 int main()
 {
-	/*locale::global(locale(""));
+	locale::global(locale(""));
 	srand(static_cast<unsigned>(time(nullptr)));
     Game _game;
-    _game.Launch();*/
+    _game.Update();
 
 
 
@@ -24,7 +24,6 @@ int main()
 
 	//Man* _man = new Man(Vector2f(10.0f,10.0f));
 	
-
 
 
 	return 0;

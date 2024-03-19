@@ -1,6 +1,27 @@
 #include "TextureManager.h"
 #include <iostream>
 
+void TextureManager::Load(Shape* _shape, const string& _path, const bool _isRepeated, const bool _smooth)
+{
+	if (_path == "")return;
+
+	TextureData* _textureData = Get(_path);
+
+	if (!_textureData)
+	{
+		_textureData = new TextureData(_path);
+		if (!_textureData->loadFromFile(_path))
+		{
+			cerr << "La texture n'a pas été correctement chargée !" << endl;
+		}
+
+		_textureData->setRepeated(_isRepeated);
+		_textureData->setSmooth(_smooth);
+	}
+
+	_shape->setTexture(_textureData);
+}
+
 void TextureManager::Load(ShapeObject* _object, const string& _path, const bool _isRepeated, const bool _smooth)
 {
 	if (_path == "") return;
@@ -57,4 +78,10 @@ void TextureManager::LoadWithRect(ShapeObject* _object, const string& _path, con
 {
 	Load(_object, _path, _isRepeated, _smooth);
 	_object->GetDrawable()->setTextureRect(_rect);
+}
+
+void TextureManager::LoadWithRect(Shape* _object, const string& _path, const IntRect& _rect, const bool _isRepeated, const bool _smooth)
+{
+	Load(_object, _path, _isRepeated, _smooth);
+	_object->setTextureRect(_rect);
 }

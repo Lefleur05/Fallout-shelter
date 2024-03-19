@@ -1,7 +1,8 @@
 #pragma once
 #include "Grid.h"
+#include "IManagable.h"
 
-class Map
+class Map : public IManagable<string>
 {
 	Grid* grid;
 
@@ -12,8 +13,12 @@ public:
 	}
 
 public:
-	Map();
+	Map(const string& _name);
 	~Map();
+
+
+public:
+	void Register();
 
 };
 
