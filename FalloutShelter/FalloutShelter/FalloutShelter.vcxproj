@@ -26,12 +26,15 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="AttackComponent.cpp" />
+    <ClCompile Include="AttackState.cpp" />
+    <ClCompile Include="BlackBorad.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="CollisionComponent.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FSM.cpp" />
+    <ClCompile Include="FSMEnemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="HUD.cpp" />
     <ClCompile Include="IManagable.cpp" />
@@ -41,6 +44,8 @@
     <ClCompile Include="Macro.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovementComponent.cpp" />
+    <ClCompile Include="MoveToState.cpp" />
+    <ClCompile Include="MoveToTransiton.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ScrollBar.cpp" />
     <ClCompile Include="ShapeObject.cpp" />
@@ -53,6 +58,7 @@
     <ClCompile Include="TimerManager.cpp" />
     <ClCompile Include="Transition.cpp" />
     <ClCompile Include="Widget.cpp" />
+    <ClCompile Include="Zombie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h" />
@@ -62,12 +68,15 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="AttackComponent.h" />
+    <ClInclude Include="AttackState.h" />
+    <ClInclude Include="BlackBorad.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="CollisionComponent.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="FSM.h" />
+    <ClInclude Include="FSMEnemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="HUD.h" />
     <ClInclude Include="IManagable.h" />
@@ -76,6 +85,8 @@
     <ClInclude Include="Kismet.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="MovementComponent.h" />
+    <ClInclude Include="MoveToState.h" />
+    <ClInclude Include="MoveToTransiton.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ScrollBar.h" />
     <ClInclude Include="ShapeObject.h" />
@@ -88,6 +99,7 @@
     <ClInclude Include="TimerManager.h" />
     <ClInclude Include="Transition.h" />
     <ClInclude Include="Widget.h" />
+    <ClInclude Include="Zombie.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

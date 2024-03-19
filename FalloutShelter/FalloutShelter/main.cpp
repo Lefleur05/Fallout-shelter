@@ -3,6 +3,7 @@
 //#include "TimerManager.h"
 //#include "ProgressBar.h"
 //#include "Timer.h"
+#include"Zombie.h"
 
 using namespace std;
 
@@ -13,7 +14,6 @@ int main()
 	srand(static_cast<unsigned>(time(nullptr)));
     Game _game;
     _game.Launch();*/
-
 
 	return 0;
 }
