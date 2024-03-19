@@ -31,6 +31,7 @@
     <ClCompile Include="CollisionComponent.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="FSM.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="HUD.cpp" />
     <ClCompile Include="IManagable.cpp" />
@@ -39,15 +40,18 @@
     <ClCompile Include="Kismet.cpp" />
     <ClCompile Include="Macro.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MovementComponent.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ScrollBar.cpp" />
     <ClCompile Include="ShapeObject.cpp" />
     <ClCompile Include="ShapeWidget.cpp" />
     <ClCompile Include="Singleton.cpp" />
+    <ClCompile Include="State.cpp" />
     <ClCompile Include="TextureData.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TimerManager.cpp" />
+    <ClCompile Include="Transition.cpp" />
     <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +67,7 @@
     <ClInclude Include="CollisionComponent.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="FSM.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="HUD.h" />
     <ClInclude Include="IManagable.h" />
@@ -70,15 +75,18 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Kismet.h" />
     <ClInclude Include="Macro.h" />
+    <ClInclude Include="MovementComponent.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ScrollBar.h" />
     <ClInclude Include="ShapeObject.h" />
     <ClInclude Include="ShapeWidget.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="State.h" />
     <ClInclude Include="TextureData.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TimerManager.h" />
+    <ClInclude Include="Transition.h" />
     <ClInclude Include="Widget.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
