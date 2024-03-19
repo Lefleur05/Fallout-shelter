@@ -1,6 +1,9 @@
 #include "Game.h"
 #include "MapManager.h"
 #include "GameWindow.h"
+#include"Spawner.h"
+#include"ActorManager.h"
+#include"Macro.h"
 
 Game::Game()
 {
@@ -11,7 +14,6 @@ Game::Game()
 
 Game::~Game()
 {
-	delete map;
 	for (Button* _button: buttons)
 	{
 		delete _button;
@@ -21,6 +23,7 @@ Game::~Game()
 void Game::Init()
 {
 	InitMap();
+	TestEntity();
 }
 
 void Game::InitMap()
@@ -38,6 +41,13 @@ void Game::InitButton()
 {
 
 
+}
+
+void Game::TestEntity()
+{
+	Vector2f _position = Vector2f(10,10);
+	Vector2f _size = Vector2f(30, 30);
+	Spawner* _spawner = new Spawner(zombie, _position, _size, 6);
 }
 
 void Game::Update()
@@ -63,7 +73,10 @@ void Game::UpdateWindow()
 	{
 		WINDOW->draw(*_drawables);
 	}
-
+	for (Drawable* _drawables : ActorManager::GetInstance().GetDrawables())
+	{
+		WINDOW->draw(*_drawables);
+	}
 	WINDOW->display();
 
 }
