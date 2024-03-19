@@ -13,109 +13,190 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Trouver un nom">
+      <UniqueIdentifier>{88f88be9-60a5-4049-a4ed-e191ef14c6a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{798bc849-c05d-449e-b6a7-f00a33746ce7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity">
+      <UniqueIdentifier>{4de1b60e-bc2a-4f6e-bdbb-1340e742043f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Human">
+      <UniqueIdentifier>{87149fd3-5ad2-48d7-92bb-6adfa9d259b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Human\Woman">
+      <UniqueIdentifier>{90753d19-b2e8-433a-9c12-9fa11cd6078f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Human\Man">
+      <UniqueIdentifier>{3357a7e1-33f4-417f-86d0-4810563d4a09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Map">
+      <UniqueIdentifier>{9217465f-6dcc-4c80-8ad0-261841b7355d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Map\Grid">
+      <UniqueIdentifier>{523fbfa5-7d2e-46c9-b274-15eb3e31e40f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Map\Tile">
+      <UniqueIdentifier>{e1400118-c89e-40db-87e8-2a32ca0a6b15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Map\Hall">
+      <UniqueIdentifier>{3c67b818-9135-4572-aeec-b1a5a8cf70be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items">
+      <UniqueIdentifier>{2068f965-17c5-4396-b1e0-70518bb35915}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Armor">
+      <UniqueIdentifier>{0f1412e1-5fad-4c48-b9b3-dc87d2409e04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Weapon">
+      <UniqueIdentifier>{517bebf3-518b-49fc-ad59-64d59560f207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Manager">
+      <UniqueIdentifier>{69873c32-b48b-4d60-98bd-50fd70ff48a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Manager\Map">
+      <UniqueIdentifier>{66d1016f-f6a8-4841-be2e-358377e1f9c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Action.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="ActionMap.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="Actor.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="ActorManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="AnimationComponent.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="AttackComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Component.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="IManagable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="IManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Kismet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ShapeObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Singleton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureData.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TimerManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Macro.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HUD.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="Button.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="Canvas.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
-    <ClCompile Include="ShapeWidget.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="CollisionComponent.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
-    <ClCompile Include="Widget.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Component.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
-    <ClCompile Include="ScrollBar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MovementComponent.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="FSM.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="IManagable.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="IManager.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="Kismet.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="Macro.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementComponent.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollBar.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeObject.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeWidget.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureData.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerManager.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="Transition.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Human.cpp">
+      <Filter>Source Files\Entity\Human</Filter>
+    </ClCompile>
+    <ClCompile Include="Man.cpp">
+      <Filter>Source Files\Entity\Human\Man</Filter>
+    </ClCompile>
+    <ClCompile Include="Woman.cpp">
+      <Filter>Source Files\Entity\Human\Woman</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files\Map\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Hall.cpp">
+      <Filter>Source Files\Map\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files\Map\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="Items.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor.cpp">
+      <Filter>Source Files\Items\Armor</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapons.cpp">
+      <Filter>Source Files\Items\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="MapManager.cpp">
+      <Filter>Header Files\Manager\Map</Filter>
     </ClCompile>
     <ClCompile Include="BlackBorad.cpp">
       <Filter>Source Files</Filter>
@@ -138,103 +219,139 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="ActionMap.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="Actor.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="ActorManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="AnimationComponent.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="AttackComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IManagable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="InputManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Kismet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ShapeObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TimerManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Macro.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HUD.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionComponent.h">
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="Canvas.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
-    <ClInclude Include="ShapeWidget.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Component.h">
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
-    <ClInclude Include="Widget.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ScrollBar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MovementComponent.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="FSM.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="IManagable.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="IManager.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="Kismet.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="Macro.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementComponent.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeObject.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollBar.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeWidget.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureData.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerManager.h">
+      <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="Transition.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Source Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Human.h">
+      <Filter>Source Files\Entity\Human</Filter>
+    </ClInclude>
+    <ClInclude Include="Man.h">
+      <Filter>Source Files\Entity\Human\Man</Filter>
+    </ClInclude>
+    <ClInclude Include="Woman.h">
+      <Filter>Source Files\Entity\Human\Woman</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Source Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Source Files\Map\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="Hall.h">
+      <Filter>Source Files\Map\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Source Files\Map\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Items.h">
+      <Filter>Source Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor.h">
+      <Filter>Source Files\Items\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapons.h">
+      <Filter>Source Files\Items\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="MapManager.h">
+      <Filter>Header Files\Manager\Map</Filter>
     </ClInclude>
     <ClInclude Include="BlackBorad.h">
       <Filter>Header Files</Filter>
