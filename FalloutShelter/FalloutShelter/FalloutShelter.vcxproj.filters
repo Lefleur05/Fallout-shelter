@@ -55,7 +55,7 @@
     <Filter Include="Header Files\Manager\Map">
       <UniqueIdentifier>{66d1016f-f6a8-4841-be2e-358377e1f9c3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Map\Hall\Game">
+    <Filter Include="Source Files\Game">
       <UniqueIdentifier>{798bc849-c05d-449e-b6a7-f00a33746ce7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -160,7 +160,7 @@
       <Filter>Header Files\Trouver un nom</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>Source Files\Map\Hall\Game</Filter>
+      <Filter>Source Files\Game</Filter>
     </ClCompile>
     <ClCompile Include="BlackBorad.cpp">
       <Filter>Source Files</Filter>
@@ -318,7 +318,7 @@
       <Filter>Header Files\Trouver un nom</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Source Files\Map\Hall\Game</Filter>
+      <Filter>Source Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="BlackBorad.h">
       <Filter>Header Files</Filter>

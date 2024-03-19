@@ -5,7 +5,17 @@
 Game::Game()
 {
 	map = nullptr;
+	buttons = vector<Button*>();
 	Init();
+}
+
+Game::~Game()
+{
+	delete map;
+	for (Button* _button: buttons)
+	{
+		delete _button;
+	}
 }
 
 void Game::Init()
@@ -22,6 +32,12 @@ void Game::InitMap()
 	map->GetGrid()->GetAllTiles()[1][1]->SetHall(new Hall(HALL_GENERATOR));
 	map->GetGrid()->GetAllTiles()[1][0]->SetHall(new Hall(HALL_FAST_FOOD));
 	map->GetGrid()->GetAllTiles()[1][3]->SetHall(new Hall(HALL_TRAITEMENT_DES_EAUX));
+}
+
+void Game::InitButton()
+{
+
+
 }
 
 void Game::Update()
