@@ -41,17 +41,17 @@ void Game::InitButton()
 	Button* _modeExplorationButton = new Button(ShapeData(Vector2f(100, 100), Vector2f(100.0f, 100.0f)), ButtonData());
 	Button* _villagerInfoButton = new Button(ShapeData(Vector2f(100, 700), Vector2f(100.0f, 100.0f)), ButtonData());
 
-	_modeBuildButton->GetData().hoveredCallback = [&]()
+	_modeBuildButton->GetData().releasedCallback = [&]()
 	{
 		cout << "mode build" << endl;
 	};
 
-	_modeExplorationButton->GetData().hoveredCallback = [&]()
+	_modeExplorationButton->GetData().releasedCallback = [&]()
 	{
 		cout << "mode Exploration" << endl;
 	};
 
-	_villagerInfoButton->GetData().hoveredCallback = [&]()
+	_villagerInfoButton->GetData().releasedCallback = [&]()
 	{
 		cout << "villager Info" << endl;
 	};

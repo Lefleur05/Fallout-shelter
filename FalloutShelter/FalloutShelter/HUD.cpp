@@ -7,7 +7,10 @@ void HUD::Interact(const Vector2f& _worldPosition, const Event& _event)
 {
 	for (Button* _button : buttons)
 	{
-		if (!_button->IsVisible()) continue;
+		if (!_button->IsVisible())
+		{
+			continue;
+		}
 
 		if (_button->GetDrawable()->getGlobalBounds().contains(_worldPosition))
 		{
