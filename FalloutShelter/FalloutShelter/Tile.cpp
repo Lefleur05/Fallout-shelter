@@ -7,7 +7,12 @@ Tile::Tile( const Vector2f& _position, const TileType& _type, const Vector2f& _s
 	shape->setPosition(_position);
 	hall = nullptr;
 
-	TextureManager::GetInstance().LoadWithRect(shape, DIRT_TEXTURE, rect);
+	if (type== ET_EXTERNE)
+	{
+		TextureManager::GetInstance().Load(shape, EXTRENE_TEXTURE);
+		return;
+	}
+	TextureManager::GetInstance().Load(shape, DIRT_TEXTURE);
 }
 
 Tile::~Tile()

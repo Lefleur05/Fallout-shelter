@@ -7,8 +7,7 @@ struct ShapeData : public Data
 	IntRect rect = IntRect();
 
 	ShapeData() {}
-	ShapeData(const Vector2f& _position, const Vector2f& _size,
-		const string& _path = "", const IntRect& _rect = IntRect())
+	ShapeData(const Vector2f& _position, const Vector2f& _size,const string& _path = "", const IntRect& _rect = IntRect())
 		: Data(_position, _path)
 	{
 		size = _size;
