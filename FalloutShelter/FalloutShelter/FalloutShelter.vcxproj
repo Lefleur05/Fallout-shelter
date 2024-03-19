@@ -39,6 +39,7 @@
     <ClCompile Include="FSM.cpp" />
     <ClCompile Include="FSMEnemy.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Hall.cpp" />
     <ClCompile Include="HUD.cpp" />
@@ -95,6 +96,7 @@
     <ClInclude Include="FSM.h" />
     <ClInclude Include="FSMEnemy.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Hall.h" />
     <ClInclude Include="HUD.h" />

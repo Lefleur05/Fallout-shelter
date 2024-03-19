@@ -16,9 +16,6 @@
     <Filter Include="Header Files\Trouver un nom">
       <UniqueIdentifier>{88f88be9-60a5-4049-a4ed-e191ef14c6a0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Game">
-      <UniqueIdentifier>{798bc849-c05d-449e-b6a7-f00a33746ce7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Entity">
       <UniqueIdentifier>{4de1b60e-bc2a-4f6e-bdbb-1340e742043f}</UniqueIdentifier>
     </Filter>
@@ -57,6 +54,9 @@
     </Filter>
     <Filter Include="Header Files\Manager\Map">
       <UniqueIdentifier>{66d1016f-f6a8-4841-be2e-358377e1f9c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{798bc849-c05d-449e-b6a7-f00a33746ce7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -180,37 +180,43 @@
     <ClCompile Include="Zombie.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Armor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Grid.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Hall.cpp">
+      <Filter>Source Files\Map\Hall</Filter>
     </ClCompile>
     <ClCompile Include="Human.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Entity\Human</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files\Map\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor.cpp">
+      <Filter>Source Files\Items\Armor</Filter>
     </ClCompile>
     <ClCompile Include="Items.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="Man.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Entity\Human\Man</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Map</Filter>
     </ClCompile>
     <ClCompile Include="MapManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Manager\Map</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Map\Tile</Filter>
     </ClCompile>
     <ClCompile Include="Weapons.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Items\Weapon</Filter>
     </ClCompile>
     <ClCompile Include="Woman.cpp">
+      <Filter>Source Files\Entity\Human\Woman</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Hall.cpp">
@@ -341,38 +347,44 @@
     <ClInclude Include="Zombie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Armor.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Grid.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Hall.h">
+      <Filter>Source Files\Map\Hall</Filter>
     </ClInclude>
     <ClInclude Include="Human.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Map\Grid</Filter>
     </ClInclude>
-    <ClInclude Include="Items.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Armor.h">
+      <Filter>Source Files\Items\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Source Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="Man.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Entity\Human\Man</Filter>
     </ClInclude>
     <ClInclude Include="MapManager.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Manager\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Source Files\Map</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Map\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Items.h">
+      <Filter>Source Files\Items</Filter>
     </ClInclude>
     <ClInclude Include="Weapons.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Items\Weapon</Filter>
     </ClInclude>
     <ClInclude Include="Woman.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Entity\Human\Woman</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Source Files\Map\Grid</Filter>
     </ClInclude>
     <ClInclude Include="Hall.h">
       <Filter>Source Files</Filter>

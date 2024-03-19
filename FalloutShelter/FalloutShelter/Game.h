@@ -2,29 +2,24 @@
 #include<iostream>
 #include <SFML/Graphics.hpp>
 #include "Map.h"
-#include"Zombie.h"
-//#include"Entity.h"
+#include "Button.h"
 
 using namespace sf;
 using namespace std;
 
 class Game
 {
-	RenderWindow* window;
-	Vector2f windowSize;
-
 	Map* map;
-
-	Zombie* zombie;
+	vector< Button*> buttons;
 
 public:
 	Game();
+	~Game();
 
 public:
 	void Init();
 	void InitMap();
-
-	void InitEntity();
+	void InitButton();
 	
 	void Update();
 	void UpdateWindow();
