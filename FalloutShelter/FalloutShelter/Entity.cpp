@@ -1,9 +1,8 @@
 #include "Entity.h"
 
-Entity::Entity(const Vector2f& _position, const Vector2f& _size, const int& _life)
+Entity::Entity(const string& _name, const ShapeData& _data, const int& _life) : Actor(_name, _data)
 {
 	life = _life;
-	shape = new RectangleShape(_size);
-	shape->setPosition(_position);
-
+	//shape = new RectangleShape(_size);
+	//shape->setPosition(_position);
 }

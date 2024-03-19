@@ -1,17 +1,16 @@
 #pragma once
 //#include "MovementCompenent"
 #include <SFML/Graphics.hpp>
+#include"Actor.h"
 using namespace sf;
 
-class Entity
+class Entity : public Actor
 {
 	Shape* shape;
 	int life;
 	//MovementCompenent* movementComponent;
 
 public:
-	Entity(const Vector2f& _position, const Vector2f& _size = Vector2f(50.0f, 50.0f), const int& _life = 100);
-
-
+	Entity(const string& _name, const ShapeData& _data, const int& _life = 100);
 };
 

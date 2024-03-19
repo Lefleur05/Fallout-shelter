@@ -1,11 +1,13 @@
 #pragma once
-#include"Actor.h"
+#include"Entity.h"
 #include"FSMEnemy.h"
+#include"EnemyMovementComponent.h"
 
-class Enemy : public Actor //hérite de Entity
+class Enemy : public Entity
 {
 protected:
 	FSMEnemy* fsmEnemy = nullptr;
+	EnemyMovementComponent* move = nullptr;
 public:
 	FSMEnemy* GetFSMEnemy()
 	{

@@ -25,6 +25,7 @@ public:
 		}
 		return nullptr;
 	}
+	void SetCurrentState(State* _currentState);
 public:
 	FSM(Actor* _owner);
 	~FSM();

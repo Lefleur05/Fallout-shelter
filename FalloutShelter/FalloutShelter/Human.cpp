@@ -1,6 +1,6 @@
 #include "Human.h"
 
-Human::Human(const Vector2f& _position): Entity(_position)
+Human::Human(const ShapeData& _data): Entity("Humain",_data)
 {
 	stats = new StatsHuman();
 	mentalHealth = 100;

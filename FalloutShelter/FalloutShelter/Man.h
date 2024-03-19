@@ -4,6 +4,6 @@ class Man : public Human
 {
 
 public:
-	Man(const Vector2f& _position);
+	Man(const ShapeData& _data);
 };
 

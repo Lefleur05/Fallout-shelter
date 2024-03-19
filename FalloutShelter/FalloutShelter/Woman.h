@@ -5,6 +5,6 @@ class Woman : public Human
 	bool isPregnant;
 
 public:
-	Woman(const Vector2f& _position);
+	Woman(const ShapeData& _data);
 };
 

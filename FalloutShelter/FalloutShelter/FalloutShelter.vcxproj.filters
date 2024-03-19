@@ -213,6 +213,15 @@
     <ClCompile Include="Woman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Hall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Spawner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyMovementComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -364,6 +373,15 @@
     </ClInclude>
     <ClInclude Include="Woman.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hall.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spawner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyMovementComponent.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

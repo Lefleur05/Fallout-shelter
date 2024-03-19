@@ -2,6 +2,8 @@
 #include<iostream>
 #include <SFML/Graphics.hpp>
 #include "Map.h"
+#include"Zombie.h"
+//#include"Entity.h"
 
 using namespace sf;
 using namespace std;
@@ -13,12 +15,16 @@ class Game
 
 	Map* map;
 
+	Zombie* zombie;
+
 public:
 	Game();
 
 public:
 	void Init();
 	void InitMap();
+
+	void InitEntity();
 	
 	void Update();
 	void UpdateWindow();

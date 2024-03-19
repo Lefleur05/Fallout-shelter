@@ -24,7 +24,6 @@ class Tile
 	TileType type;
 	Shape* shape;
 	Hall* hall;
-	IntRect rect;
 
 public:
 	void SetHall(Hall* _hall)
@@ -38,21 +37,21 @@ public:
 		switch (hall->GetType())
 		{
 		case HALL_DOOR:
-			TextureManager::GetInstance().LoadWithRect(shape, DOOR_TEXTURE, rect);
+			TextureManager::GetInstance().Load(shape, DOOR_TEXTURE);
 			break;
 		case HALL_ELEVATOR:
 			break;
 		case HALL_GENERATOR:
-			TextureManager::GetInstance().LoadWithRect(shape, POWER_GEN_TEXTURE, rect);
+			TextureManager::GetInstance().Load(shape, POWER_GEN_TEXTURE);
 			break;
 		case HALL_FAST_FOOD:
-			TextureManager::GetInstance().LoadWithRect(shape, DINER_TEXTURE, rect);
+			TextureManager::GetInstance().Load(shape, DINER_TEXTURE);
 			break;
 		case HALL_TRAITEMENT_DES_EAUX:
-			TextureManager::GetInstance().LoadWithRect(shape, WATER_TREATMENT_TEXTURE, rect);
+			TextureManager::GetInstance().Load(shape, WATER_TREATMENT_TEXTURE);
 			break;
 		case HALL_DORTOIR:
-			TextureManager::GetInstance().LoadWithRect(shape, LIVING_QUARTER_TEXTURE, rect);
+			TextureManager::GetInstance().Load(shape, LIVING_QUARTER_TEXTURE);
 			break;
 		default:
 			break;

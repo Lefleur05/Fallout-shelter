@@ -39,6 +39,6 @@ class Human: public Entity
 
 
 public:
-	Human(const Vector2f& _position);
+	Human(const ShapeData& _data);
 };
 

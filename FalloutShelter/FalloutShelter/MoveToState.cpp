@@ -9,6 +9,11 @@ MoveToState::MoveToState(FSM* _owner) : State(_owner)
 	//transitions.push_back();
 }
 
+void MoveToState::Init()
+{
+	fsm->SetCurrentState(this);
+}
+
 void MoveToState::Start()
 {
 	cout << fsm->GetOwner()->GetID() << "Start MoveTo State" << endl;
@@ -17,10 +22,10 @@ void MoveToState::Start()
 void MoveToState::Update(const float _deltaTime)
 {
 	State::Update(_deltaTime);
-	cout << fsm->GetOwner() << "Update MoveTo State" << endl;
+	cout << fsm->GetOwner()->GetID() << " Update MoveTo State" << endl;
 }
 
 void MoveToState::Stop()
 {
-	cout << fsm->GetOwner() << "Stop MoveTo State" << endl;
+	cout << fsm->GetOwner()->GetID() << "Stop MoveTo State" << endl;
 }

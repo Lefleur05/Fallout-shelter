@@ -1,5 +1,5 @@
 #include "FSMEnemy.h"
-
+#include<iostream>
 
 FSMEnemy::FSMEnemy(Actor* _owner) : FSM(_owner)
 {
