@@ -162,42 +162,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="Human.cpp">
-      <Filter>Source Files\Entity\Human</Filter>
-    </ClCompile>
-    <ClCompile Include="Man.cpp">
-      <Filter>Source Files\Entity\Human\Man</Filter>
-    </ClCompile>
-    <ClCompile Include="Woman.cpp">
-      <Filter>Source Files\Entity\Human\Woman</Filter>
-    </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Source Files\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="Grid.cpp">
-      <Filter>Source Files\Map\Grid</Filter>
-    </ClCompile>
-    <ClCompile Include="Hall.cpp">
-      <Filter>Source Files\Map\Hall</Filter>
-    </ClCompile>
-    <ClCompile Include="Tile.cpp">
-      <Filter>Source Files\Map\Tile</Filter>
-    </ClCompile>
-    <ClCompile Include="Items.cpp">
-      <Filter>Source Files\Items</Filter>
-    </ClCompile>
-    <ClCompile Include="Armor.cpp">
-      <Filter>Source Files\Items\Armor</Filter>
-    </ClCompile>
-    <ClCompile Include="Weapons.cpp">
-      <Filter>Source Files\Items\Weapon</Filter>
-    </ClCompile>
-    <ClCompile Include="MapManager.cpp">
-      <Filter>Header Files\Manager\Map</Filter>
-    </ClCompile>
     <ClCompile Include="BlackBorad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -214,6 +178,39 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Zombie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Human.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Man.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Woman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -317,42 +314,6 @@
     <ClInclude Include="Game.h">
       <Filter>Source Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Source Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="Human.h">
-      <Filter>Source Files\Entity\Human</Filter>
-    </ClInclude>
-    <ClInclude Include="Man.h">
-      <Filter>Source Files\Entity\Human\Man</Filter>
-    </ClInclude>
-    <ClInclude Include="Woman.h">
-      <Filter>Source Files\Entity\Human\Woman</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Source Files\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Grid.h">
-      <Filter>Source Files\Map\Grid</Filter>
-    </ClInclude>
-    <ClInclude Include="Hall.h">
-      <Filter>Source Files\Map\Tile</Filter>
-    </ClInclude>
-    <ClInclude Include="Tile.h">
-      <Filter>Source Files\Map\Tile</Filter>
-    </ClInclude>
-    <ClInclude Include="Items.h">
-      <Filter>Source Files\Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Armor.h">
-      <Filter>Source Files\Items\Armor</Filter>
-    </ClInclude>
-    <ClInclude Include="Weapons.h">
-      <Filter>Source Files\Items\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="MapManager.h">
-      <Filter>Header Files\Manager\Map</Filter>
-    </ClInclude>
     <ClInclude Include="BlackBorad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -370,6 +331,39 @@
     </ClInclude>
     <ClInclude Include="Zombie.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Human.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Man.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MapManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapons.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Woman.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
