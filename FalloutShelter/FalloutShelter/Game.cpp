@@ -64,13 +64,7 @@ void Game::Update()
 {
 	while (WINDOW->isOpen())
 	{
-		Event _event;
-		while (WINDOW->pollEvent(_event))
-		{
-			if (_event.type == Event::Closed)WINDOW->close();
-		}
-
-		InputManager::GetInstance().Update(*WINDOW);
+		if (!InputManager::GetInstance().Update(*WINDOW)) break;
 
 
 		UpdateWindow();

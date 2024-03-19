@@ -5,6 +5,7 @@
 
 void HUD::Interact(const Vector2f& _worldPosition, const Event& _event)
 {
+	cout << _worldPosition.x << " : " << _worldPosition.y << endl;
 	for (Button* _button : buttons)
 	{
 		if (!_button->IsVisible())
@@ -12,6 +13,7 @@ void HUD::Interact(const Vector2f& _worldPosition, const Event& _event)
 			continue;
 		}
 
+		
 		if (_button->GetDrawable()->getGlobalBounds().contains(_worldPosition))
 		{
 			if (_event.type == Event::MouseButtonPressed)
