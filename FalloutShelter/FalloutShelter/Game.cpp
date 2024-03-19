@@ -19,6 +19,7 @@ void Game::Init()
 {
 	InitMap();
 	InitButton();
+	TestEntity();
 }
 
 void Game::InitMap()
@@ -60,6 +61,12 @@ void Game::InitButton()
 	_canvas->AddWidget(_villagerInfoButton);
 }
 
+void Game::TestEntity()
+{
+	ShapeData _data = ShapeData(Vector2f(100, 10), Vector2f(30, 50));
+	zombie = new Zombie(_data);
+}
+
 void Game::Update()
 {
 	while (WINDOW->isOpen())
@@ -86,7 +93,7 @@ void Game::UpdateWindow()
 	{
 		WINDOW->draw(*_drawables);
 	}
-
+	WINDOW->draw(*zombie->GetShape());
 	for (Canvas* _canvas : HUD::GetInstance().GetAllValues())
 	{
 		for (Widget* _widget : _canvas->GetUiWidgets())

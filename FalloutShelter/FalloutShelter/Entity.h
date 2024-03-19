@@ -6,6 +6,7 @@ using namespace sf;
 
 class Entity : public Actor
 {
+protected:
 	Shape* shape;
 	int life;
 	//MovementCompenent* movementComponent;

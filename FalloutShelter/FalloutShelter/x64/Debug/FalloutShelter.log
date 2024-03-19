@@ -1,7 +1,4 @@
-﻿  EnemyMovementComponent.cpp
-  Game.cpp
-  ScrollBar.cpp
+﻿  Game.cpp
   Zombie.cpp
-  main.cpp
   Generating Code...
   FalloutShelter.vcxproj -> D:\CourCorrection\Fallout-shelter\FalloutShelter\x64\Debug\FalloutShelter.exe

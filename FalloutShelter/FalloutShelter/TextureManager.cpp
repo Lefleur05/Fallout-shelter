@@ -30,7 +30,7 @@ void TextureManager::Load(ShapeObject* _object, const string& _path, const bool 
 	if (!_textureData)
 	{
 		_textureData = new TextureData(_path);
-		if (!_textureData->loadFromFile("Assets/Textures/" + _path))
+		if (!_textureData->loadFromFile("Assets/Texture/" + _path))
 		{
 			cerr << "La texture n'a pas été correctement chargée !" << endl;
 		}
