@@ -1,5 +1,6 @@
 #include "InputManager.h"
 #include "HUD.h"
+#include "GameWindow.h"
 
 bool InputManager::Update(RenderWindow& _window)
 {
@@ -15,7 +16,7 @@ bool InputManager::Update(RenderWindow& _window)
 	Event _event;
 	while (_window.pollEvent(_event))
 	{
-		if (_event.type == Event::Closed) return false;
+		if (_event.type == Event::Closed) WINDOW->close();
 		if (_event.type == Event::Resized)
 		{
 			//
