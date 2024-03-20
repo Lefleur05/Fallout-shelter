@@ -28,7 +28,5 @@ public:
 
 public:
 	Hall(HallType _type);
-
-
 };
 

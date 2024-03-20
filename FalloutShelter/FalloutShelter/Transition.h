@@ -1,8 +1,6 @@
 #pragma once
 
-
 class State;
-
 class Transition
 {
 protected:
@@ -14,7 +12,7 @@ public:
 		return nextState;
 	}
 public:
-	virtual void Init();
+	virtual void Init(State* _nextState);
 	virtual bool CanNext() const;
 };
 

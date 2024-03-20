@@ -19,7 +19,7 @@ void Game::Init()
 {
 	InitMap();
 	InitButton();
-	TestEntity();
+	InitGridNav();
 }
 
 void Game::InitMap()
@@ -61,11 +61,11 @@ void Game::InitButton()
 	_canvas->AddWidget(_villagerInfoButton);
 }
 
-void Game::TestEntity()
+void Game::InitGridNav()
 {
-	ShapeData _data = ShapeData(Vector2f(100, 10), Vector2f(30, 50));
-	zombie = new Zombie(_data);
+	grid = new GridNav(8, 100, Vector2f(100, 0));
 }
+
 
 void Game::Update()
 {
@@ -86,23 +86,23 @@ void Game::Update()
 
 void Game::UpdateWindow()
 {
-
 	WINDOW->clear();
 
 	for (Drawable* _drawables: MapManager::GetInstance().GetDrawables())
 	{
 		WINDOW->draw(*_drawables);
 	}
-	WINDOW->draw(*zombie->GetShape());
+	for (Drawable* _actorDraw : ActorManager::GetInstance().GetDrawables())
+	{
+		WINDOW->draw(*_actorDraw);
+	}
 	for (Canvas* _canvas : HUD::GetInstance().GetAllValues())
 	{
 		for (Widget* _widget : _canvas->GetUiWidgets())
 		{
 			WINDOW->draw(*_widget->GetDrawable());
-
 		}
 	}
 
 	WINDOW->display();
-
 }

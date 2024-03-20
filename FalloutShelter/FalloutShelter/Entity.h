@@ -13,5 +13,9 @@ protected:
 
 public:
 	Entity(const string& _name, const ShapeData& _data, const int& _life = 100);
+	int GetLifeEntity()
+	{
+		return life;
+	}
 };
 

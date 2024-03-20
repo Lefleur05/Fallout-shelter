@@ -1,5 +1,6 @@
 #include "ShapeObject.h"
 #include "TextureManager.h"
+#include <iostream>
 
 ShapeObject::ShapeObject(const ShapeData& _data)
 {

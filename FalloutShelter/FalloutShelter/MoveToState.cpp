@@ -1,12 +1,13 @@
 #include "MoveToState.h"
 #include"FSM.h"
 #include"Actor.h"
+#include"MoveToTransiton.h"
 #include<iostream>
 
 MoveToState::MoveToState(FSM* _owner) : State(_owner)
 {
-	//mettre la transition
-	//transitions.push_back();
+	moveToAttack = new MoveToTransiton();
+	transitions.push_back(moveToAttack);
 }
 
 void MoveToState::Init()
@@ -17,6 +18,7 @@ void MoveToState::Init()
 void MoveToState::Start()
 {
 	cout << fsm->GetOwner()->GetID() << "Start MoveTo State" << endl;
+	//recuper la destiantion dans le EnemyMovementComponent
 }
 
 void MoveToState::Update(const float _deltaTime)

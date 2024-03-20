@@ -25,8 +25,6 @@ public:
 		for (Actor* _actor : GetAllValues())
 		{
 			_drawables.push_back(_actor->GetDrawable());
-			std::cout << _actor->GetShapePosition().x << endl;
-			std::cout << _actor->GetShapePosition().y << endl;
 		}
 		return _drawables;
 	}

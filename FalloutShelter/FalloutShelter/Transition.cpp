@@ -1,7 +1,9 @@
 #include "Transition.h"
+#include"State.h"
 
-void Transition::Init()
+void Transition::Init(State* _nextState)
 {
+
 }
 
 bool Transition::CanNext() const

@@ -1,8 +1,10 @@
 #pragma once
 #include"State.h"
 
+class MoveToTransiton;
 class MoveToState : public State
 {
+	MoveToTransiton* moveToAttack;
 public:
 	MoveToState(FSM* _owner);
 public:

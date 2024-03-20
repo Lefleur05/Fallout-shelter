@@ -26,6 +26,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="Armor.cpp" />
+    <ClCompile Include="AstarAlgo.cpp" />
     <ClCompile Include="AttackComponent.cpp" />
     <ClCompile Include="AttackState.cpp" />
     <ClCompile Include="BlackBorad.cpp" />
@@ -41,6 +42,8 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="GridNav.cpp" />
+    <ClCompile Include="GridPointData.cpp" />
     <ClCompile Include="Hall.cpp" />
     <ClCompile Include="HUD.cpp" />
     <ClCompile Include="Human.cpp" />
@@ -58,6 +61,7 @@
     <ClCompile Include="MovementComponent.cpp" />
     <ClCompile Include="MoveToState.cpp" />
     <ClCompile Include="MoveToTransiton.cpp" />
+    <ClCompile Include="Nodes.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ScrollBar.cpp" />
     <ClCompile Include="ShapeObject.cpp" />
@@ -86,6 +90,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="Armor.h" />
+    <ClInclude Include="AstarAlgo.h" />
     <ClInclude Include="AttackComponent.h" />
     <ClInclude Include="AttackState.h" />
     <ClInclude Include="BlackBorad.h" />
@@ -101,6 +106,8 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="GridNav.h" />
+    <ClInclude Include="GridPointData.h" />
     <ClInclude Include="Hall.h" />
     <ClInclude Include="HUD.h" />
     <ClInclude Include="Human.h" />
@@ -117,6 +124,7 @@
     <ClInclude Include="MovementComponent.h" />
     <ClInclude Include="MoveToState.h" />
     <ClInclude Include="MoveToTransiton.h" />
+    <ClInclude Include="Nodes.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ScrollBar.h" />
     <ClInclude Include="ShapeObject.h" />

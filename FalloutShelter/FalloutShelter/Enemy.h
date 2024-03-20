@@ -2,12 +2,14 @@
 #include"Entity.h"
 #include"FSMEnemy.h"
 #include"EnemyMovementComponent.h"
+#include"AttackComponent.h"
 
 class Enemy : public Entity
 {
 protected:
 	FSMEnemy* fsmEnemy = nullptr;
 	EnemyMovementComponent* move = nullptr;
+	AttackComponent* attack = nullptr;
 public:
 	FSMEnemy* GetFSMEnemy()
 	{
