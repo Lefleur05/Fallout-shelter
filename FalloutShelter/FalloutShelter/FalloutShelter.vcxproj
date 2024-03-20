@@ -69,6 +69,7 @@
     <ClCompile Include="MoveToTransiton.cpp" />
     <ClCompile Include="Nodes.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="PlayerBunker.cpp" />
     <ClCompile Include="Ressource.cpp" />
     <ClCompile Include="ScrollBar.cpp" />
     <ClCompile Include="ShapeObject.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="MoveToTransiton.h" />
     <ClInclude Include="Nodes.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="PlayerBunker.h" />
     <ClInclude Include="Ressource.h" />
     <ClInclude Include="ScrollBar.h" />
     <ClInclude Include="ShapeObject.h" />

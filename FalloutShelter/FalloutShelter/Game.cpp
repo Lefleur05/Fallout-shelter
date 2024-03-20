@@ -6,11 +6,11 @@
 #include "Macro.h"
 #include "TextWidget.h"
 #include "TimerManager.h"
+#include "PlayerBunker.h"
 
 
 Game::Game()
 {
-	playerBunker = nullptr;
 	map = nullptr;
 	canvas = new Canvas("Button");
 	titleMenu = nullptr;
@@ -23,16 +23,10 @@ Game::Game()
 void Game::Init()
 {
 	InitMap();
-	InitBunkerPlayer();
 	InitUIInfo();
 	InitButton();
 	InitGridNav();
 	InitTitleMenu();
-}
-
-void Game::InitBunkerPlayer()
-{
-	playerBunker = new Bunker();
 }
 
 void Game::InitMap()
@@ -50,7 +44,7 @@ void Game::InitUIInfo()
 {
 	#pragma region Capsule/Money
 	Vector2f _position = Vector2f(WINDOW_SIZE.x / 100.0f * 90.0f, WINDOW_SIZE.y / 100.0f * 5.0f);
-	TextWidget* _capsuleCount= new TextWidget(TextData(to_string(playerBunker->GetMoney()), _position, "Overseer_Italic.otf", 30, Color::Green));
+	TextWidget* _capsuleCount= new TextWidget(TextData(to_string(PLAYERBUNKER->GetMoney()), _position, "Overseer_Italic.otf", 30, Color::Green));
 	canvas->AddWidget(_capsuleCount);
 
 

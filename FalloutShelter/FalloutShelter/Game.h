@@ -15,7 +15,6 @@ using namespace std;
 
 class Game
 {
-	Bunker* playerBunker;
 	Map* map;
 	Canvas* canvas;
 	TitleMenu* titleMenu;
@@ -28,7 +27,6 @@ public:
 
 public:
 	void Init();
-	void InitBunkerPlayer();
 	void InitMap();
 	void InitUIInfo();
 	void InitButton();
