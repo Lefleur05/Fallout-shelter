@@ -1,6 +1,8 @@
 #pragma once
 #include "Human.h"
+#include "Timer.h"
 #include<vector>
+#include<iostream>
 using namespace std;
 
 enum HallType
@@ -20,6 +22,9 @@ class Hall
 	int hallLV;
 	vector<Human*> humans;
 
+	Timer* timerRessource;
+
+
 public:
 	HallType GetType() 
 	{
@@ -28,6 +33,9 @@ public:
 
 public:
 	Hall(HallType _type);
+
+public:
+	void InitTimer();
 
 
 };

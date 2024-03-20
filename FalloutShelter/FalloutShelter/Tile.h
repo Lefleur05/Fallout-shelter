@@ -82,7 +82,7 @@ public:
 	~Tile();
 
 public:
-	
+	void Update();
 
 };
 

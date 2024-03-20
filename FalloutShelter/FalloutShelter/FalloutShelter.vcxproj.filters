@@ -58,6 +58,39 @@
     <Filter Include="Source Files\Game">
       <UniqueIdentifier>{798bc849-c05d-449e-b6a7-f00a33746ce7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Bunker">
+      <UniqueIdentifier>{e68d36d1-6fe9-495b-8aa1-1bcae8e6fc4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Ressource">
+      <UniqueIdentifier>{a0f2222c-a6ae-4fff-8c4e-be5891681e68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Ressource\Electricity">
+      <UniqueIdentifier>{5a8f7c28-b30a-4dc2-aff8-617fad4b6a25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Manager\Font">
+      <UniqueIdentifier>{87d26f41-369f-4656-9f9f-3c9c4f33521d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Ressource\Food">
+      <UniqueIdentifier>{928961fb-9b3f-4f48-88aa-14e06bc753b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Menu">
+      <UniqueIdentifier>{baeeac71-b695-4850-92f9-9f9229bd6752}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Menu\TitleMenu">
+      <UniqueIdentifier>{6d97e7d9-06b0-47b2-ae29-fb0c1a33b2d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Ressource\Water">
+      <UniqueIdentifier>{bda21219-b325-4b73-b38d-310002e0262b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Zombie">
+      <UniqueIdentifier>{2b213bcc-b8dd-4d2d-a314-41475019cac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Window">
+      <UniqueIdentifier>{2d4ea38b-d3d7-4969-adea-f63c0d6385e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Menu\BuildMenu">
+      <UniqueIdentifier>{ef00df21-be94-4b41-a84d-e28428b28a82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -162,24 +195,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="BlackBorad.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FSMEnemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MoveToState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MoveToTransiton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Zombie.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Hall.cpp">
       <Filter>Source Files\Map\Hall</Filter>
     </ClCompile>
@@ -216,17 +231,62 @@
     <ClCompile Include="Woman.cpp">
       <Filter>Source Files\Entity\Human\Woman</Filter>
     </ClCompile>
-    <ClCompile Include="GameWindow.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="AttackState.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackBorad.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bunker.cpp">
+      <Filter>Source Files\Bunker</Filter>
+    </ClCompile>
+    <ClCompile Include="Electicity.cpp">
+      <Filter>Source Files\Ressource\Electricity</Filter>
+    </ClCompile>
+    <ClCompile Include="FontManager.cpp">
+      <Filter>Header Files\Manager\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="FontData.cpp">
+      <Filter>Header Files\Manager\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="FSMEnemy.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="Label.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextWidget.cpp">
+    <ClCompile Include="MoveToState.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextObject.cpp">
+    <ClCompile Include="MoveToTransiton.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ressource.cpp">
+      <Filter>Source Files\Ressource</Filter>
+    </ClCompile>
+    <ClCompile Include="TextObject.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="TextWidget.cpp">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleMenu.cpp">
+      <Filter>Source Files\Menu\TitleMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="Water.cpp">
+      <Filter>Source Files\Ressource\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="Food.cpp">
+      <Filter>Source Files\Ressource\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombie.cpp">
+      <Filter>Source Files\Entity\Zombie</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWindow.cpp">
+      <Filter>Source Files\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildMenu.cpp">
+      <Filter>Source Files\Menu\BuildMenu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -329,29 +389,8 @@
     <ClInclude Include="Game.h">
       <Filter>Source Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="BlackBorad.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FSMEnemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveToState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveToTransiton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Zombie.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Hall.h">
       <Filter>Source Files\Map\Hall</Filter>
-    </ClInclude>
-    <ClInclude Include="Human.h">
-      <Filter>Source Files\Map\Grid</Filter>
     </ClInclude>
     <ClInclude Include="Armor.h">
       <Filter>Source Files\Items\Armor</Filter>
@@ -380,20 +419,68 @@
     <ClInclude Include="Woman.h">
       <Filter>Source Files\Entity\Human\Woman</Filter>
     </ClInclude>
-    <ClInclude Include="GameWindow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Grid.h">
       <Filter>Source Files\Map\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackBorad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bunker.h">
+      <Filter>Source Files\Bunker</Filter>
+    </ClInclude>
+    <ClInclude Include="Electicity.h">
+      <Filter>Source Files\Ressource\Electricity</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>Header Files\Manager\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="FontData.h">
+      <Filter>Header Files\Manager\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Food.h">
+      <Filter>Source Files\Ressource\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="FSMEnemy.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Label.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TextWidget.h">
+    <ClInclude Include="MoveToState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TextObject.h">
+    <ClInclude Include="MoveToTransiton.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ressource.h">
+      <Filter>Source Files\Ressource</Filter>
+    </ClInclude>
+    <ClInclude Include="TextObject.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="TextWidget.h">
+      <Filter>Header Files\Trouver un nom</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleMenu.h">
+      <Filter>Source Files\Menu\TitleMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="Water.h">
+      <Filter>Source Files\Ressource\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombie.h">
+      <Filter>Source Files\Entity\Zombie</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWindow.h">
+      <Filter>Source Files\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Human.h">
+      <Filter>Source Files\Entity\Human</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildMenu.h">
+      <Filter>Source Files\Menu\BuildMenu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

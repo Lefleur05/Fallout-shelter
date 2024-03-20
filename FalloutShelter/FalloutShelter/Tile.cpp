@@ -19,3 +19,8 @@ Tile::~Tile()
 {
 	delete shape;
 }
+
+void Tile::Update()
+{
+
+}
