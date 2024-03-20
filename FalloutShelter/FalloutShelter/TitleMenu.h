@@ -24,13 +24,5 @@ public:
 
 	void Update();
 	void UpdateWindow();
-
-
-
-
-
-
-
-
 };
 

@@ -5,6 +5,7 @@ Bunker::Bunker()
 	money = 0;
 	allItemsInBunker = vector<Items*>();
 	ressources = vector<Ressource*>();
+	allHuman = vector<Human*>();
 	healthPotionsCount = 0;
 
 	InitRessource();
@@ -15,6 +16,7 @@ Bunker::Bunker(const int& _money, vector<Items*> _allItemsInBunker, vector<Resso
 	money = _money;
 	allItemsInBunker = _allItemsInBunker;
 	ressources = _ressources;
+	allHuman = vector<Human*>();
 	healthPotionsCount = _healthPotionsCount;
 
 	InitRessource();

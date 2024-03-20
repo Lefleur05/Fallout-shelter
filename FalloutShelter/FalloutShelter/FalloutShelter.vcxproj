@@ -86,6 +86,7 @@
     <ClCompile Include="TimerManager.cpp" />
     <ClCompile Include="TitleMenu.cpp" />
     <ClCompile Include="Transition.cpp" />
+    <ClCompile Include="VillagerInfoMenu.cpp" />
     <ClCompile Include="Water.cpp" />
     <ClCompile Include="Weapons.cpp" />
     <ClCompile Include="Widget.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="TimerManager.h" />
     <ClInclude Include="TitleMenu.h" />
     <ClInclude Include="Transition.h" />
+    <ClInclude Include="VillagerInfoMenu.h" />
     <ClInclude Include="Water.h" />
     <ClInclude Include="Weapons.h" />
     <ClInclude Include="Widget.h" />

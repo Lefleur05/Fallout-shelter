@@ -1,6 +1,7 @@
 #pragma once
 #include"Items.h"
 #include"Ressource.h"
+#include"Human.h"
 #include<vector>
 
 using namespace std;
@@ -10,6 +11,7 @@ class Bunker
 	int money;
 	vector<Items*> allItemsInBunker; // TODO faire class Items
 	vector<Ressource*> ressources;
+	vector<Human*> allHuman;
 	int healthPotionsCount;
 
 
@@ -18,6 +20,12 @@ public:
 	{
 		return money;
 	}
+
+	vector<Human*> GetAllHuman()
+	{
+		return allHuman;
+	}
+
 
 public:
 	Bunker();

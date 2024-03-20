@@ -91,6 +91,9 @@
     <Filter Include="Source Files\Menu\BuildMenu">
       <UniqueIdentifier>{ef00df21-be94-4b41-a84d-e28428b28a82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Menu\VillagerInfoMenu">
+      <UniqueIdentifier>{5696dd60-ca24-4b45-80bb-f31048c5c7bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -309,6 +312,9 @@
     <ClCompile Include="PlayerBunker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VillagerInfoMenu.cpp">
+      <Filter>Source Files\Menu\VillagerInfoMenu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -523,6 +529,9 @@
     </ClInclude>
     <ClInclude Include="PlayerBunker.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VillagerInfoMenu.h">
+      <Filter>Source Files\Menu\VillagerInfoMenu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
