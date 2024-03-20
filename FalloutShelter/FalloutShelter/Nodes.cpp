@@ -9,7 +9,6 @@ Nodes::Nodes(const ShapeData& _data, GridPointData* _grid) : Actor(STRING_ID("No
 
 Nodes::~Nodes()
 {
-	delete grid;
 	delete parent;
 }
 
