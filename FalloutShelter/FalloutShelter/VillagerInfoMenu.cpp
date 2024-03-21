@@ -45,19 +45,18 @@ void VillagerInfoMenu::InitVillagerList()
 {
 	for (int _i = 0; _i < PLAYERBUNKER->GetAllHuman().size(); _i++)
 	{
-		villagerList.push_back(new ShapeObject(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f * 50.0f, WINDOW_SIZE.y / 100.0f * 20.0f), Vector2f(0.0f, 0.0f))));
+		villagerList.push_back(new ShapeObject(ShapeData(Vector2f(0.0f, 0.0f), Vector2f(WINDOW_SIZE.x / 100.0f * 85.0f, WINDOW_SIZE.y / 100.0f * 20.0f))));
 		if (_i%2==0)
 		{
 			villagerList[_i]->GetShape()->setFillColor(Color::Green);
 		}
 	}
 }
-
 void VillagerInfoMenu::InitButtons()
 {
 	canvas = new Canvas("BuildMenu");
 
-#pragma region CloseButton
+	#pragma region CloseButton
 	float _sizeX = WINDOW_SIZE.x / 100.0f * 10.0f;
 	float _sizeY = WINDOW_SIZE.x / 100.0f * 5.0f;
 
@@ -78,7 +77,20 @@ void VillagerInfoMenu::InitButtons()
 
 	canvas->AddWidget(_closeBuildMenu);
 
-#pragma endregion
+	#pragma endregion
+}
+
+void VillagerInfoMenu::Set3VillagerInfoPosition()
+{
+	vector<Vector2f> _position = {
+		Vector2f(WINDOW_SIZE.x / 100.0f * 7.5f,WINDOW_SIZE.y / 100.0f * 17.5f),
+		Vector2f(WINDOW_SIZE.x / 100.0f * 7.5f,WINDOW_SIZE.y / 100.0f * 40.0f),
+		Vector2f(WINDOW_SIZE.x / 100.0f * 7.5f,WINDOW_SIZE.y / 100.0f * 62.5f),
+	};
+
+	villagerList[scrole]->SetShapePosition(_position[0]);
+	villagerList[scrole + 1]->SetShapePosition(_position[1]);
+	villagerList[scrole + 2]->SetShapePosition(_position[2]);
 }
 
 void VillagerInfoMenu::Update()
@@ -98,6 +110,23 @@ void VillagerInfoMenu::Update()
 			canvas->SetVisibilityStatus(false);
 			break;
 		}
+
+	/*	Event _event;
+		while (WINDOW->pollEvent(_event))
+		{
+			if (scrole < villagerList.size() - 3);
+
+			if (_event.type == Event::MouseWheelScrolled)
+			{
+				if (_event.mouseWheelScroll.wheel == Mouse::VerticalWheel)
+				{
+					cout << "mouse x: " << _event.mouseWheelScroll.x << endl;
+				}
+			}
+		}*/
+		
+
+
 		UpdateWindow();
 	}
 }
@@ -119,9 +148,11 @@ void VillagerInfoMenu::UpdateWindow()
 
 	if (scrole< villagerList.size()-3)
 	{
+		Set3VillagerInfoPosition();
+
 		WINDOW->draw(*villagerList[scrole]->GetShape());
-		WINDOW->draw(*villagerList[scrole+1]->GetShape());
-		WINDOW->draw(*villagerList[scrole+2]->GetShape());
+		WINDOW->draw(*villagerList[scrole + 1]->GetShape());
+		WINDOW->draw(*villagerList[scrole + 2]->GetShape());
 	}
 
 	WINDOW->display();

@@ -291,13 +291,21 @@ void Game::InitHuman()
 
 	Human* _h = new Human(ShapeData(_pos, _sizeHuman));
 	_h->Init();
+	//TODO Enlever cette ligne ( ligne de teste , trouver mieux)
+	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[0][3]->GetHall()->AddHumanInHall(_h);
 
 	Human* _hGenerator = new Human(ShapeData(_posGenerator, _sizeHuman));
 	_hGenerator->Init();
+	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[1][1]->GetHall()->AddHumanInHall(_hGenerator);
+
 
 	Human* _hDinner = new Human(ShapeData(_posDinner, _sizeHuman));
 	_hDinner->Init();
+	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[1][0]->GetHall()->AddHumanInHall(_hDinner);
+
 
 	Human* _hWaterTreatment = new Human(ShapeData(_posWaterTreatment, _sizeHuman));
 	_hWaterTreatment->Init();
+	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[1][3]->GetHall()->AddHumanInHall(_hWaterTreatment);
+
 }

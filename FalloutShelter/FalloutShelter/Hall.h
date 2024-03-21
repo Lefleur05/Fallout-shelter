@@ -22,6 +22,7 @@ class Hall
 	int hallSize;
 	int hallLV;
 	vector<Human*> humans;
+	int quantity;
 	
 	Canvas* canvas;
 	Timer* timerRessource;
@@ -48,10 +49,14 @@ public:
 
 public:
 	void Init(Shape* _shape, Vector2f _size);
+	void InitQuantity();
 	void InitTimer();
 	void InitButton(Shape* _shape, Vector2f _size);
 
+	void DrawButton();
 	void AddRessourceType();
+	void AddHumanInHall(Human* _human);
+
 
 
 };

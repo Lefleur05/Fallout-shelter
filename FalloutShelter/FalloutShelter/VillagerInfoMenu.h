@@ -35,6 +35,8 @@ public:
 	void InitVillagerList();
 	void InitButtons();
 
+
+	void Set3VillagerInfoPosition();
 	void Update();
 	void UpdateWindow();
 };
