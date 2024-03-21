@@ -3,6 +3,7 @@
 #include"Actor.h"
 #include"MoveToTransiton.h"
 #include<iostream>
+#include "EnemyMovementComponent.h"
 
 MoveToState::MoveToState(FSM* _owner) : State(_owner)
 {
@@ -18,13 +19,12 @@ void MoveToState::Init()
 void MoveToState::Start()
 {
 	cout << fsm->GetOwner()->GetID() << "Start MoveTo State" << endl;
-	//recuper la destiantion dans le EnemyMovementComponent
+	//fsm->GetOwner()->GetComponent<EnemyMovementComponent>()->TimerMove();
 }
 
 void MoveToState::Update(const float _deltaTime)
 {
-	State::Update(_deltaTime);
-	cout << fsm->GetOwner()->GetID() << " Update MoveTo State" << endl;
+	//cout << fsm->GetOwner()->GetID() << endl;
 }
 
 void MoveToState::Stop()

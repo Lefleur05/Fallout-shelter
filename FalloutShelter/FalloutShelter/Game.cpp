@@ -28,11 +28,10 @@ void Game::Init()
 	canvas = new Canvas("Button");
 	InitMap();
 	InitUIInfo();
-	DrawHuman();
 	//InitButton();
-	//InitHuman();
+	InitHuman();
 	InitGridNav();
-	//InitZombie();
+	InitZombie();
 	InitTitleMenu();
 }
 
@@ -130,14 +129,15 @@ void Game::InitTitleMenu()
 
 void Game::InitZombie()
 {
-	Zombie* _zombie = new Zombie(ShapeData(Vector2f(100,0),Vector2f(20,60)));
+	Zombie* _zombie = new Zombie(ShapeData(grid->GetNodes()[99]->GetShapePosition(), Vector2f(20, 60)));
 	_zombie->GetShape()->setFillColor(Color::Cyan);
 	_zombie->Init();
+	_zombie->GetComponent<EnemyMovementComponent>()->SetGrid(grid);
 }
 
 void Game::InitGridNav()
 {
-	grid = new GridNav(10, 100, Vector2f(50, 50));
+	grid = new GridNav(10, 50, Vector2f(50, 50));
 }
 
 
@@ -207,27 +207,6 @@ void Game::DrawMap()
 }
 
 void Game::InitHuman()
-{
-	Vector2f _sizeHuman = Vector2f(20, 50);
-	Vector2f _offset = Vector2f(20, 50);
-	Vector2f _pos = PositionHumanInHall(0, 3, _offset);
-	Vector2f _posGenerator = PositionHumanInHall(1, 1, _offset);
-	Vector2f _posDinner = PositionHumanInHall(1, 0, _offset);
-	Vector2f _posWaterTreatment = PositionHumanInHall(1, 3, _offset);
-
-	for (int i = 0; i < 5; i++)
-	{
-		Human* _h = new Human(ShapeData(_pos, _sizeHuman));
-		_h->Init();
-		allHuman.push_back(_h);
-		//allHuman[0]->GetShape()->setPosition(_posGenerator);
-		_h->GetShape()->setPosition(_posGenerator);
-		//_h->GetShape()->setPosition(_posDinner);
-		//_h->GetShape()->setPosition(_posWaterTreatment);
-	}
-}
-
-void Game::DrawHuman()
 {
 	Vector2f _sizeHuman = Vector2f(20, 50);
 	Vector2f _offset = Vector2f(20, 50);

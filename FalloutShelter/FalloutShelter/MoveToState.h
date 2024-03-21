@@ -2,6 +2,7 @@
 #include"State.h"
 
 class MoveToTransiton;
+
 class MoveToState : public State
 {
 	MoveToTransiton* moveToAttack;

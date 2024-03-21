@@ -5,8 +5,7 @@
 using namespace sf;
 using namespace std;
 
-class GridPointData;
-
+class GridNav;
 class Nodes : public Actor
 {
 	vector<int> succesors;
@@ -15,9 +14,10 @@ class Nodes : public Actor
 	float F;
 	bool isOpen = true;
 	Nodes* parent;
-	GridPointData* gridNav = nullptr;
+	GridNav* gridNav = nullptr;
 public:
-	Nodes(const ShapeData& _data,GridPointData* _grid);
+	Nodes(const ShapeData& _data, GridNav* _grid);
+	Nodes(const ShapeData& _data);
 	~Nodes();
 	void ResteNode();
 	void AddSuccessor(const int _successors)
@@ -44,7 +44,7 @@ public:
 	{
 		return parent;
 	}
-	GridPointData* GetGridNav() 
+	GridNav* GetGridNav()
 	{
 		return gridNav;
 	}

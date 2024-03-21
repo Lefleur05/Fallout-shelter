@@ -2,5 +2,6 @@
 #include"State.h"
 class AttackState : public State
 {
+
 };
 

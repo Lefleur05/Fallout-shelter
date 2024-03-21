@@ -6,14 +6,6 @@ GridPointData::GridPointData()
 
 }
 
-//GridPointData::~GridPointData()
-//{
-//	for (size_t i = 0; i < nodes.size(); i++)
-//	{
-//		delete nodes[i];
-//	}
-//}
-
 void GridPointData::RestCost()
 {
 	for (size_t i = 0; i < nodes.size(); i++)

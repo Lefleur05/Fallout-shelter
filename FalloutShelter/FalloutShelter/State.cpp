@@ -22,7 +22,7 @@ void State::Init()
 
 void State::Start()
 {
-
+	
 }
 
 void State::Update(const float _deltaTime)

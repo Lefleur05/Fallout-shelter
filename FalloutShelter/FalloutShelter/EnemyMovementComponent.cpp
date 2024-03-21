@@ -1,44 +1,56 @@
 #include "EnemyMovementComponent.h"
 #include"Actor.h"
 #include"Macro.h"
-#include"GridPointData.h"
+#include"GridNav.h"
 #include"MapManager.h"
+
 
 EnemyMovementComponent::EnemyMovementComponent(Actor* _owner) : MovementComponent(_owner)
 {
 	minRange = 0.5f;
-	destination = Vector2f(0, 0);
+	delaisPath = 1.f;
 	astar = new AstarAlgo();
-	data = new GridPointData();
+	canMove = true;
+	requestTimer = nullptr;
+	moveTimer = nullptr;
 }
 
 void EnemyMovementComponent::Init()
 {
-	//mettre un timer qui request
+	Component::Init();
 }
 
-void EnemyMovementComponent::Update(const float _deltaTime)
-{
-	MoveTo(_deltaTime);
-}
-
-void EnemyMovementComponent::Request(Vector2f _target)
+void EnemyMovementComponent::Request()
 {
 	index = 0;
-	astar->ComputePath(data->GetClosesNode(owner->GetShapePosition()), data->GetClosesNode(_target));
+	if (!astar || !grid)
+		return;
+	astar->ComputePath(grid->GetClosesNode(owner->GetShapePosition()), grid->GetClosesNode(MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[0][0]->GetShape()->getPosition()));
 }
 
-void EnemyMovementComponent::MoveTo(const float _deltaTime)
+void EnemyMovementComponent::ChangePoint()
 {
+	//if (IsAtPosition())
+	//	return;
 	if (index >= astar->GetPathList().size())
 	{
-		Request(MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[0][0]->GetShape()->getPosition());
+		cout << "CONNARD" << endl;
+		Request();
 		return;
 	}
 	destination = Vector2f(astar->GetPathList()[index]->GetShapePosition().x, 0);
 	index++;
+	cout << "COUCOU" << endl;
 }
 
+void EnemyMovementComponent::TimerMove()
+{
+	SetCallback([&]()
+	{
+			SetCanMove(false);
+			moveTimer = new Timer([&]() {ChangePoint(); }, seconds(0.1f), true, true);
+	});
+}
 
 
 

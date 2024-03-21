@@ -6,7 +6,6 @@ Tile::Tile( const Vector2f& _position, const TileType& _type, const Vector2f& _s
 	type = _type;
 	shape = new RectangleShape(_size);
 	shape->setPosition(_position);
-	SetOriginAtMiddle(shape);
 	size = _size;
 	hall = nullptr;
 

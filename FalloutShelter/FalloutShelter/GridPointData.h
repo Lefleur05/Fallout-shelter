@@ -11,7 +11,6 @@ class GridPointData
 
 public:
 	GridPointData();
-	//~GridPointData();
 	void RestCost();
 	Nodes* GetClosesNode(Vector2f _location);
 	vector<Nodes*>& GetNodes()

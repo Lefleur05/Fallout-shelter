@@ -1,10 +1,9 @@
 #include "AstarAlgo.h"
-#include"GridPointData.h"
-#include"Macro.h"
+#include"GridNav.h"
 
 AstarAlgo::AstarAlgo()
 {
-
+	
 }
 
 
@@ -68,3 +67,4 @@ vector<Nodes*> AstarAlgo::GetFinalPath(Nodes* _start, Nodes* _end)
 	}
 	return _path;
 }
+

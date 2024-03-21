@@ -1,11 +1,14 @@
 #pragma once
 #include"Nodes.h"
 #include<vector>
+#include"Macro.h"
+
 using namespace std;
 
 class AstarAlgo
 {
 	vector<Nodes*> correctPath;
+	Vertex* line;
 public:
 	AstarAlgo();
 	~AstarAlgo();

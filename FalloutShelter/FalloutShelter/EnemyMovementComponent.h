@@ -5,17 +5,22 @@
 class EnemyMovementComponent : public MovementComponent
 {
 	AstarAlgo* astar;
-	GridPointData* data;
-	Vector2f destination;
+	GridNav* grid;
 	bool canMove;
 	float minRange;
+	float delaisPath;
 	int index = 0;
+	Timer* requestTimer;
+	Timer* moveTimer;
 public:
-	EnemyMovementComponent(Actor* _owner);
 	virtual void Init() override;
-	virtual void Update(const float _deltaTime) override;
-	void Request(Vector2f _target);
-private:
-	void MoveTo(const float _deltaTime);
+	EnemyMovementComponent(Actor* _owner);
+	void TimerMove();
+	void Request();
+	void ChangePoint();
+	void SetGrid(GridNav* _grid)
+	{
+		grid = _grid;
+	}
 };
 

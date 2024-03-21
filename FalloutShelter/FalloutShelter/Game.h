@@ -48,8 +48,6 @@ public:
 	void DrawActor();
 	void DrawMap();
 
-	void DrawHuman();
-
 	void Update();
 	void UpdateUIInfo();
 	void UpdateWindow();
