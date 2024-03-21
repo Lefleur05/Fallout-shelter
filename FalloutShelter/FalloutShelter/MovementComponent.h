@@ -16,8 +16,10 @@ protected:
 	bool canMove;
 	float speed;
 	float gravity;
+	float minRange;
 	Vector2f lastDirection;
-
+	Vector2f destination;
+	function<void()> callback;
 	AnimationComponent* animation;
 	CollisionComponent* collision;
 
@@ -25,8 +27,16 @@ public:
 	void SetSpeed(const float _speed)
 	{
 		speed = _speed;
+	}	
+
+	void SetCallback(const function<void()>& _callback)
+	{
+		callback = _callback;
 	}
 	void SetCanMove(const bool _status);
+	void SetDestination(const Vector2f& _destination, const bool _canMove = true);
+	void Update(const float _deltaTime);
+	bool IsAtPosition() const;
 	bool GetCanMove() const
 	{
 		return canMove;
@@ -35,7 +45,13 @@ public:
 	{
 		return lastDirection;
 	}
+	Vector2f GetDestination() const
+	{
+		return destination;
+	}
 
 public:
 	MovementComponent(Actor* _owner);
+private:
+	void MoveToDestination(const float _deltaTime);
 };

@@ -15,7 +15,7 @@ AstarAlgo::~AstarAlgo()
 
 void AstarAlgo::ComputePath(Nodes* _start, Nodes* _end)
 {
-	_start->GetGrid()->RestCost();
+	_start->GetGridNav()->RestCost();
 	correctPath.clear();
 
 	vector<Nodes*> _openList = vector<Nodes*>();
@@ -29,16 +29,15 @@ void AstarAlgo::ComputePath(Nodes* _start, Nodes* _end)
 	while (_openList.size() > 0)
 	{
 		Nodes* _current = _openList[0];
-		//Supprimer le current du vector 
 		_closeList.push_back(_current);
 		if (_current == _end)
 		{
 			correctPath = GetFinalPath(_start, _end);
 			return;
 		}
-		for (size_t i = 0; i < _current->GetSuccessors().size(); i++)
+		for (int i = 0; i < _current->GetSuccessors().size(); i++)
 		{
-			Nodes* _next = _current->GetGrid()->GetNodes()[_current->GetSuccessors()[i]];
+			Nodes* _next = _current->GetGridNav()->GetNodes()[_current->GetSuccessors()[i]];
 			if (find(_closeList.begin(), _closeList.end(), _next) != _closeList.end() || !_next->GetIsOpen())
 				continue;
 			float _hCost = Distance(_current->GetShapePosition(), _end->GetShapePosition());

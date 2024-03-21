@@ -52,6 +52,7 @@
     <ClCompile Include="GridPointData.cpp" />
     <ClCompile Include="Hall.cpp" />
     <ClCompile Include="HUD.cpp" />
+    <ClCompile Include="HumainMovementComponent.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="IManagable.cpp" />
     <ClCompile Include="IManager.cpp" />
@@ -125,6 +126,7 @@
     <ClInclude Include="GridPointData.h" />
     <ClInclude Include="Hall.h" />
     <ClInclude Include="HUD.h" />
+    <ClInclude Include="HumainMovementComponent.h" />
     <ClInclude Include="Human.h" />
     <ClInclude Include="IManagable.h" />
     <ClInclude Include="IManager.h" />

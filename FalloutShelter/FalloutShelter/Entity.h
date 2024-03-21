@@ -9,8 +9,6 @@ class Entity : public Actor
 protected:
 	Shape* shape;
 	int life;
-	//MovementCompenent* movementComponent;
-
 public:
 	Entity(const string& _name, const ShapeData& _data, const int& _life = 100);
 	int GetLifeEntity()

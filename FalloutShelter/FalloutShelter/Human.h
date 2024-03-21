@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Weapons.h"
 #include "Armor.h"
+#include"HumainMovementComponent.h"
 
 struct StatsHuman
 {
@@ -36,6 +37,7 @@ class Human: public Entity
 	int mentalHealth;
 	Armor* armor;
 	Weapons* weapons;
+	HumainMovementComponent* movement;
 
 
 public:

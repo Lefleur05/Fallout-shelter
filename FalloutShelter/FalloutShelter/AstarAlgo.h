@@ -11,5 +11,10 @@ public:
 	~AstarAlgo();
 	void ComputePath(Nodes* _start,Nodes* _end);
 	vector<Nodes*> GetFinalPath(Nodes* _start,Nodes* _end);
+
+	vector<Nodes*>& GetPathList()
+	{
+		return correctPath;
+	}
 };
 

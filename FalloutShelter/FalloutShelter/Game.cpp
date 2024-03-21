@@ -16,7 +16,6 @@ Game::Game()
 	titleMenu = nullptr;
 	buildMenu = nullptr;
 
-
 	Init();
 }
 
@@ -25,10 +24,14 @@ void Game::Init()
 	InitMap();
 	InitBunkerPlayer();
 	InitUIInfo();
-	InitButton();
+	DrawHuman();
+	//InitButton();
+	//InitHuman();
 	InitGridNav();
+	//InitZombie();
 	InitTitleMenu();
 }
+
 
 void Game::InitBunkerPlayer()
 {
@@ -115,9 +118,16 @@ void Game::InitTitleMenu()
 	titleMenu->Update();
 }
 
+void Game::InitZombie()
+{
+	Zombie* _zombie = new Zombie(ShapeData(Vector2f(100,0),Vector2f(20,60)));
+	_zombie->GetShape()->setFillColor(Color::Cyan);
+	_zombie->Init();
+}
+
 void Game::InitGridNav()
 {
-	grid = new GridNav(8, 100, Vector2f(100, 0));
+	grid = new GridNav(10, 100, Vector2f(50, 50));
 }
 
 
@@ -128,8 +138,7 @@ void Game::Update()
 		InputManager::GetInstance().Update(*WINDOW);
 		//MapManager::GetInstance().Update();
 		TimerManager::GetInstance().Update();
-
-
+		ActorManager::GetInstance().Update();
 		UpdateWindow();
 	}
 }
@@ -138,21 +147,77 @@ void Game::UpdateWindow()
 {
 	WINDOW->clear();
 
-	for (Drawable* _drawables: MapManager::GetInstance().GetDrawables())
-	{
-		WINDOW->draw(*_drawables);
-	}
-
-	for (Drawable* _actorDraw : ActorManager::GetInstance().GetDrawables())
-	{
-		WINDOW->draw(*_actorDraw);
-	}
-
+	DrawMap();
+	DrawActor();
 	for (Widget* _widget : canvas->GetUiWidgets())
 	{
 		WINDOW->draw(*_widget->GetDrawable());
 	}
 
-
 	WINDOW->display();
+}
+
+Vector2f Game::PositionHumanInHall(int _indexX, int _indexY,Vector2f _offset)
+{
+	Vector2f _position = MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[_indexX][_indexY]->GetShape()->getPosition() + _offset;
+	return _position;
+}
+
+void Game::DrawActor()
+{
+	for (Drawable* _actorDraw : ActorManager::GetInstance().GetDrawables())
+	{
+		WINDOW->draw(*_actorDraw);
+	}
+}
+
+void Game::DrawMap()
+{
+	for (Drawable* _drawables : MapManager::GetInstance().GetDrawables())
+	{
+		WINDOW->draw(*_drawables);
+	}
+}
+
+void Game::InitHuman()
+{
+	Vector2f _sizeHuman = Vector2f(20, 50);
+	Vector2f _offset = Vector2f(20, 50);
+	Vector2f _pos = PositionHumanInHall(0, 3, _offset);
+	Vector2f _posGenerator = PositionHumanInHall(1, 1, _offset);
+	Vector2f _posDinner = PositionHumanInHall(1, 0, _offset);
+	Vector2f _posWaterTreatment = PositionHumanInHall(1, 3, _offset);
+
+	for (int i = 0; i < 5; i++)
+	{
+		Human* _h = new Human(ShapeData(_pos, _sizeHuman));
+		_h->Init();
+		allHuman.push_back(_h);
+		//allHuman[0]->GetShape()->setPosition(_posGenerator);
+		_h->GetShape()->setPosition(_posGenerator);
+		//_h->GetShape()->setPosition(_posDinner);
+		//_h->GetShape()->setPosition(_posWaterTreatment);
+	}
+}
+
+void Game::DrawHuman()
+{
+	Vector2f _sizeHuman = Vector2f(20, 50);
+	Vector2f _offset = Vector2f(20, 50);
+	Vector2f _pos = PositionHumanInHall(0, 3, _offset);
+	Vector2f _posGenerator = PositionHumanInHall(1, 1, _offset);
+	Vector2f _posDinner = PositionHumanInHall(1, 0, _offset);
+	Vector2f _posWaterTreatment = PositionHumanInHall(1, 3, _offset);
+
+	Human* _h = new Human(ShapeData(_pos, _sizeHuman));
+	_h->Init();
+
+	Human* _hGenerator = new Human(ShapeData(_posGenerator, _sizeHuman));
+	_hGenerator->Init();
+
+	Human* _hDinner = new Human(ShapeData(_posDinner, _sizeHuman));
+	_hDinner->Init();
+
+	Human* _hWaterTreatment = new Human(ShapeData(_posWaterTreatment, _sizeHuman));
+	_hWaterTreatment->Init();
 }

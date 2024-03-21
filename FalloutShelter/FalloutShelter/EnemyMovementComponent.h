@@ -9,12 +9,13 @@ class EnemyMovementComponent : public MovementComponent
 	Vector2f destination;
 	bool canMove;
 	float minRange;
+	int index = 0;
 public:
 	EnemyMovementComponent(Actor* _owner);
 	virtual void Init() override;
 	virtual void Update(const float _deltaTime) override;
+	void Request(Vector2f _target);
 private:
-	void Request();
 	void MoveTo(const float _deltaTime);
 };
 

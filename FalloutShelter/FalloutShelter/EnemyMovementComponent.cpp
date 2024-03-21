@@ -22,14 +22,21 @@ void EnemyMovementComponent::Update(const float _deltaTime)
 	MoveTo(_deltaTime);
 }
 
-void EnemyMovementComponent::Request()
+void EnemyMovementComponent::Request(Vector2f _target)
 {
-	astar->ComputePath(data->GetClosesNode(owner->GetShapePosition()), data->GetClosesNode(MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[0][0]->GetShape()->getPosition()));
+	index = 0;
+	astar->ComputePath(data->GetClosesNode(owner->GetShapePosition()), data->GetClosesNode(_target));
 }
 
 void EnemyMovementComponent::MoveTo(const float _deltaTime)
 {
-
+	if (index >= astar->GetPathList().size())
+	{
+		Request(MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[0][0]->GetShape()->getPosition());
+		return;
+	}
+	destination = Vector2f(astar->GetPathList()[index]->GetShapePosition().x, 0);
+	index++;
 }
 
 

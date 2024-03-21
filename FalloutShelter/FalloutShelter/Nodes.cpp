@@ -4,7 +4,7 @@
 Nodes::Nodes(const ShapeData& _data, GridPointData* _grid) : Actor(STRING_ID("Nodes"),_data)
 {
 	F = G + H;
-	grid = _grid;
+	gridNav = _grid;
 }
 
 Nodes::~Nodes()

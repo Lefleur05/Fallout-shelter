@@ -15,7 +15,7 @@ class Nodes : public Actor
 	float F;
 	bool isOpen = true;
 	Nodes* parent;
-	GridPointData* grid = nullptr;
+	GridPointData* gridNav = nullptr;
 public:
 	Nodes(const ShapeData& _data,GridPointData* _grid);
 	~Nodes();
@@ -44,9 +44,9 @@ public:
 	{
 		return parent;
 	}
-	GridPointData* GetGrid() const
+	GridPointData* GetGridNav() 
 	{
-		return grid;
+		return gridNav;
 	}
 };
 

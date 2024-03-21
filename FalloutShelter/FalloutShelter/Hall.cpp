@@ -7,7 +7,7 @@ Hall::Hall(HallType _type)
 	hallLV = 1;
 	humans = vector<Human*>();
 	timerRessource = nullptr;
-	InitTimer();
+	//InitTimer();
 }
 
 void Hall::InitTimer()
