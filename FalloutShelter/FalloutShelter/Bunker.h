@@ -25,6 +25,11 @@ public:
 	{
 		return allHuman;
 	}
+
+	void AddHuman(Human* _human)
+	{
+		allHuman.push_back(_human);
+	}
 	vector<Ressource*> GetAllRessource()
 	{
 		return ressources;

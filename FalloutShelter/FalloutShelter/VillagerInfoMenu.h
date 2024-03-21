@@ -14,6 +14,8 @@ class VillagerInfoMenu
 	ShapeObject* frameMenu;
 	Canvas* canvas;
 
+	bool closedBuildMEnu;
+
 	int scrole;
 
 public: 
@@ -31,6 +33,7 @@ public:
 	void Init();
 	void InitBackGround();
 	void InitVillagerList();
+	void InitButtons();
 
 	void Update();
 	void UpdateWindow();

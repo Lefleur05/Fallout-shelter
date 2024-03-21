@@ -9,6 +9,7 @@
 #include "Canvas.h"
 #include "TitleMenu.h"
 #include "BuildMenu.h"
+#include "VillagerInfoMenu.h"
 #include "TextWidget.h"
 #include "ProgressBar.h"
 
@@ -21,9 +22,13 @@ class Game
 	Canvas* canvas;
 	TitleMenu* titleMenu;
 	BuildMenu* buildMenu;
+	VillagerInfoMenu* villagerInfoMenu;
 
 	TextWidget* capsuleCount;
+	TextWidget* villagerCount;
 	ProgressBar* electricityBar;
+	ProgressBar* foodBar;
+	ProgressBar* waterBar;
 
 
 	Zombie* zombie;

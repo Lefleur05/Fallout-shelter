@@ -39,7 +39,7 @@ void BuildMenu::Update()
 
 void BuildMenu::UpdateWindow()
 {
-	WINDOW->clear();
+	WINDOW->clear(Color(104, 197, 254));
 
 	for (Drawable* _drawable: backGround)
 	{

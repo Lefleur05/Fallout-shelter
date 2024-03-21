@@ -4,6 +4,7 @@
 #include "Macro.h"
 #include "HUD.h"
 #include "TextureManager.h"
+#include "MapManager.h"
 
 Hall::Hall(HallType _type)
 {
@@ -46,7 +47,8 @@ void Hall::InitTimer()
 void Hall::InitButton(Shape* _shape, Vector2f _size)
 {
 	canvas = new Canvas("ButtonRessource");
-	Button* _buttonRessource = new Button(ShapeData(_shape->getPosition(), _size), ButtonData());
+	Vector2f _position = Vector2f(_shape->getPosition().x+ _size.x/2.0f, _shape->getPosition().y + _size.y / 2.0f);
+	Button* _buttonRessource = new Button(ShapeData(_position, _size*0.75f), ButtonData());
 	_buttonRessource->GetData().pressedCallback = [&]()
 	{
 		cout << "Ressource" << endl;
@@ -99,6 +101,7 @@ void Hall::AddRessourceType()
 		_index = 2;
 		break;
 	case HALL_DORTOIR:
+		_index = 3;
 		break;
 	default:
 		break;
@@ -109,6 +112,18 @@ void Hall::AddRessourceType()
 		cerr << "Ressource not found" << endl;
 		return;
 	}
+	
+	if (_index==3)
+	{
+		Vector2f _offset = Vector2f(20, 50);
+		Vector2f _sizeHuman = Vector2f(20, 50);
+		Vector2f _position = MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[0][3]->GetShape()->getPosition() + _offset;
+		Human* _h = new Human(ShapeData(_position, _sizeHuman));
+		_h->Init();
+		return;
+	}
+
+	
 
 	if (PLAYERBUNKER->GetAllRessource()[_index]->GetQuantity() + 1> PLAYERBUNKER->GetAllRessource()[_index]->GetMaxQuantity())
 	{

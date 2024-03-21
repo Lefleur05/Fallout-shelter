@@ -37,6 +37,12 @@ public:
 		currentValue = _newValue > maxValue ? maxValue : _newValue < 0 ? 0 : _newValue;
 		Update();
 	}
+
+	void SetMaxValue(const float _newValue)
+	{
+		maxValue = _newValue ;
+		Update();
+	}
 	void ChangeValue(const float _byAmount)
 	{
 		const float _newValue = currentValue + _byAmount;
