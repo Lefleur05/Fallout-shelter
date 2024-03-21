@@ -30,11 +30,11 @@ void Grid::InitTiles()
 		{
 			if (_x==0 && _y ==0)
 			{
-				Tile* tile = new Tile(Vector2f(_x * WINDOW_SIZE.x / tilesCount.x+ _tileSize.x / 2.0f, _y * WINDOW_SIZE.y / tilesCount.y + _tileSize.y / 2.0f), ET_EXTERNE, _tileSize);
+				Tile* tile = new Tile(Vector2f(_x * WINDOW_SIZE.x / tilesCount.x, _y * WINDOW_SIZE.y / tilesCount.y+100.0f), ET_EXTERNE, _tileSize);
 				_tiles.push_back(tile);
 				continue;
 			}
-			Tile* tile = new Tile(Vector2f(_x* WINDOW_SIZE.x / tilesCount.x + _tileSize.x/2.0f, _y * WINDOW_SIZE.y / tilesCount.y + _tileSize.y / 2.0f),ET_BUILDABLE, _tileSize);
+			Tile* tile = new Tile(Vector2f(_x* WINDOW_SIZE.x / tilesCount.x , _y * WINDOW_SIZE.y / tilesCount.y+100.0f),ET_BUILDABLE, _tileSize);
 			_tiles.push_back(tile);
 		}
 		allTiles.push_back(_tiles);
