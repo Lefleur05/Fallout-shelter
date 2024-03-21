@@ -8,19 +8,23 @@
 #include"GridNav.h"
 #include "Canvas.h"
 #include "TitleMenu.h"
-#include "Bunker.h"
 #include "BuildMenu.h"
+#include "TextWidget.h"
+#include "ProgressBar.h"
 
 using namespace sf;
 using namespace std;
 
 class Game
 {
-	Bunker* playerBunker;
 	Map* map;
 	Canvas* canvas;
 	TitleMenu* titleMenu;
 	BuildMenu* buildMenu;
+
+	TextWidget* capsuleCount;
+	ProgressBar* electricityBar;
+
 
 	Zombie* zombie;
 	GridNav* grid;
@@ -33,7 +37,6 @@ public:
 public:
 	void Init();
 	void InitHuman();
-	void InitBunkerPlayer();
 	void InitMap();
 	void InitUIInfo();
 	void InitButton();
@@ -48,6 +51,7 @@ public:
 	void DrawHuman();
 
 	void Update();
+	void UpdateUIInfo();
 	void UpdateWindow();
 
 	Vector2f PositionHumanInHall(int _indexX, int _indexY, Vector2f _offset);

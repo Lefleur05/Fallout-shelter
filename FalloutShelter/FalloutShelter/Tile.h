@@ -27,12 +27,14 @@ class Tile
 {
 	TileType type;
 	Shape* shape;
+	Vector2f size;
 	Hall* hall;
 
 public:
 	void SetHall(Hall* _hall)
 	{
 		hall = _hall;
+		hall->Init(shape, size);
 		SetTexture();
 	}
 	void SetTexture()
@@ -71,18 +73,17 @@ public:
 		}
 	}
 
-
 	Shape* GetShape()
 	{
 		return shape;
+	}
+	Hall* GetHall()
+	{
+		return hall;
 	}
 
 public:
 	Tile(const Vector2f& _position, const TileType& _type= ET_BUILDABLE, const Vector2f& _size= Vector2f(100.0f,100.0f));
 	~Tile();
-
-public:
-	void Update();
-
 };
 

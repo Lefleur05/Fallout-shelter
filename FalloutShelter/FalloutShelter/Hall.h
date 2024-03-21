@@ -1,6 +1,7 @@
 #pragma once
 #include "Human.h"
 #include "Timer.h"
+#include "Canvas.h"
 #include<vector>
 #include<iostream>
 using namespace std;
@@ -21,7 +22,8 @@ class Hall
 	int hallSize;
 	int hallLV;
 	vector<Human*> humans;
-
+	
+	Canvas* canvas;
 	Timer* timerRessource;
 
 
@@ -31,11 +33,25 @@ public:
 		return type;
 	}
 
+	Timer* GetTimer()
+	{
+		return timerRessource;
+	}
+
+	Canvas* GetCanvas()
+	{
+		return canvas;
+	}
+
 public:
 	Hall(HallType _type);
 
 public:
+	void Init(Shape* _shape, Vector2f _size);
 	void InitTimer();
+	void InitButton(Shape* _shape, Vector2f _size);
+
+	void AddRessourceType();
 
 
 };

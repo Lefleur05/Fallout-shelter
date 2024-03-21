@@ -21,9 +21,5 @@ public:
 		}
 		return _drawables;
 	}
-
-public:
-	void Update();
-
 };
 

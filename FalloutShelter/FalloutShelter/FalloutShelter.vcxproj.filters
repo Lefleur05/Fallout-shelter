@@ -91,6 +91,15 @@
     <Filter Include="Source Files\Menu\BuildMenu">
       <UniqueIdentifier>{ef00df21-be94-4b41-a84d-e28428b28a82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Menu\VillagerInfoMenu">
+      <UniqueIdentifier>{5696dd60-ca24-4b45-80bb-f31048c5c7bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Player">
+      <UniqueIdentifier>{624180ec-d6d7-4ee8-be99-f8ba8b06118e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ProgressBar">
+      <UniqueIdentifier>{74871d36-bcd6-4fdc-a222-5e5d98be82a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -306,8 +315,14 @@
     <ClCompile Include="Spawner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HumainMovementComponent.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="VillagerInfoMenu.cpp">
+      <Filter>Source Files\Menu\VillagerInfoMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBunker.cpp">
+      <Filter>Source Files\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressBar.cpp">
+      <Filter>Source Files\ProgressBar</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -521,8 +536,14 @@
     <ClInclude Include="Spawner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HumainMovementComponent.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="VillagerInfoMenu.h">
+      <Filter>Source Files\Menu\VillagerInfoMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBunker.h">
+      <Filter>Source Files\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressBar.h">
+      <Filter>Source Files\ProgressBar</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

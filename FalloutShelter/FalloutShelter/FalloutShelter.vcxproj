@@ -70,6 +70,8 @@
     <ClCompile Include="MoveToTransiton.cpp" />
     <ClCompile Include="Nodes.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="PlayerBunker.cpp" />
+    <ClCompile Include="ProgressBar.cpp" />
     <ClCompile Include="Ressource.cpp" />
     <ClCompile Include="ScrollBar.cpp" />
     <ClCompile Include="ShapeObject.cpp" />
@@ -86,6 +88,7 @@
     <ClCompile Include="TimerManager.cpp" />
     <ClCompile Include="TitleMenu.cpp" />
     <ClCompile Include="Transition.cpp" />
+    <ClCompile Include="VillagerInfoMenu.cpp" />
     <ClCompile Include="Water.cpp" />
     <ClCompile Include="Weapons.cpp" />
     <ClCompile Include="Widget.cpp" />
@@ -143,6 +146,8 @@
     <ClInclude Include="MoveToTransiton.h" />
     <ClInclude Include="Nodes.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="PlayerBunker.h" />
+    <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="Ressource.h" />
     <ClInclude Include="ScrollBar.h" />
     <ClInclude Include="ShapeObject.h" />
@@ -159,6 +164,7 @@
     <ClInclude Include="TimerManager.h" />
     <ClInclude Include="TitleMenu.h" />
     <ClInclude Include="Transition.h" />
+    <ClInclude Include="VillagerInfoMenu.h" />
     <ClInclude Include="Water.h" />
     <ClInclude Include="Weapons.h" />
     <ClInclude Include="Widget.h" />
