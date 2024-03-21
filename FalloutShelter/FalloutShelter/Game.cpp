@@ -4,29 +4,34 @@
 #include "HUD.h"
 #include "InputManager.h"
 #include "Macro.h"
-#include "TextWidget.h"
 #include "TimerManager.h"
 #include "PlayerBunker.h"
 
 
+#define EMPTY_PROGRESS_BAR "Icon/Empty_Progresse_Bar.png"
+#define FILLED_PROGRESS_BAR  "Icon/Filled_Progresse_Bar.png"
+
 Game::Game()
 {
 	map = nullptr;
-	canvas = new Canvas("Button");
+	canvas = nullptr;
 	titleMenu = nullptr;
 	buildMenu = nullptr;
-
+	capsuleCount = nullptr;
+	electricityBar = nullptr;
 
 	Init();
 }
 
 void Game::Init()
 {
+	canvas = new Canvas("Button");
 	InitMap();
 	InitUIInfo();
 	InitButton();
 	InitGridNav();
 	InitTitleMenu();
+	
 }
 
 void Game::InitMap()
@@ -43,17 +48,29 @@ void Game::InitMap()
 void Game::InitUIInfo()
 {
 	#pragma region Capsule/Money
+	
 	Vector2f _position = Vector2f(WINDOW_SIZE.x / 100.0f * 90.0f, WINDOW_SIZE.y / 100.0f * 5.0f);
-	TextWidget* _capsuleCount= new TextWidget(TextData(to_string(PLAYERBUNKER->GetMoney()), _position, "Overseer_Italic.otf", 30, Color::Green));
-	canvas->AddWidget(_capsuleCount);
+	capsuleCount = new TextWidget(TextData(to_string(PLAYERBUNKER->GetMoney()), _position, "Overseer_Italic.otf", 30, Color::Green));
+	canvas->AddWidget(capsuleCount);
 
-
-	Vector2f _sizeIcon = Vector2f(50.0f,50.0f);
+	Vector2f _sizeIcon = Vector2f(50.0f, 50.0f);
 	Vector2f _positionIcon = Vector2f(WINDOW_SIZE.x / 100.0f * 87.5f, WINDOW_SIZE.y / 100.0f * 7.5f);
 
-	ShapeWidget* _capsule = new ShapeWidget(ShapeData(_positionIcon, _sizeIcon,"Icon/Capsule_Icon.png"));
-
+	ShapeWidget* _capsule = new ShapeWidget(ShapeData(_positionIcon, _sizeIcon, "Icon/Capsule_Icon.png"));
 	canvas->AddWidget(_capsule);
+
+	#pragma endregion
+
+	#pragma region ProgressBar Electicity
+
+	const Vector2f& _electricityPos = Vector2f(WINDOW_SIZE.x / 100.0f * 25.0f, WINDOW_SIZE.y / 100.0f * 5.0f);
+	const Vector2f& _electricitySize = Vector2f(100.0f, 50.0f);
+
+	electricityBar = new ProgressBar(ShapeData(_electricityPos, _electricitySize, EMPTY_PROGRESS_BAR), FILLED_PROGRESS_BAR, ProgressType::PT_RIGHT);
+
+	canvas->AddWidget(electricityBar);
+	canvas->AddWidget(electricityBar->GetForeground());
+
 
 	#pragma endregion
 }
@@ -71,7 +88,7 @@ void Game::InitButton()
 		buildMenu->Update();
 		canvas->SetVisibilityStatus(true);
 	};
-	SetOriginAtMiddle(_modeBuildButton->GetObject()->GetShape()),
+	SetOriginAtMiddle(_modeBuildButton->GetObject()->GetShape());
 	TextureManager::GetInstance().Load(_modeBuildButton->GetObject()->GetShape(), "Assets/Texture/Icon/Building_Icon.png");
 	_modeBuildButton->GetObject()->GetShape()->setFillColor(Color::Green);
 	canvas->AddWidget(_modeBuildButton);
@@ -120,12 +137,16 @@ void Game::Update()
 	while (WINDOW->isOpen())
 	{
 		InputManager::GetInstance().Update(*WINDOW);
-		//MapManager::GetInstance().Update();
 		TimerManager::GetInstance().Update();
 
-
+		UpdateUIInfo();
 		UpdateWindow();
 	}
+}
+
+void Game::UpdateUIInfo()
+{
+	capsuleCount->GetObject()->SetText(to_string(PLAYERBUNKER->GetMoney()));
 }
 
 void Game::UpdateWindow()
@@ -140,6 +161,18 @@ void Game::UpdateWindow()
 	for (Drawable* _actorDraw : ActorManager::GetInstance().GetDrawables())
 	{
 		WINDOW->draw(*_actorDraw);
+	}
+
+	for (Tile* _tile: map->GetGrid()->GetRessourceTiles())
+	{
+		if (_tile->GetHall()->GetCanvas()->IsVisible())
+		{
+			for (Widget* _widget : _tile->GetHall()->GetCanvas()->GetUiWidgets())
+			{
+				WINDOW->draw(*_widget->GetDrawable());
+			}
+		}	
+
 	}
 
 	for (Widget* _widget : canvas->GetUiWidgets())

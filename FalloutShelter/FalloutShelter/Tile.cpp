@@ -1,10 +1,13 @@
 #include "Tile.h"
+#include "Macro.h"
 
 Tile::Tile( const Vector2f& _position, const TileType& _type, const Vector2f& _size)
 {
 	type = _type;
 	shape = new RectangleShape(_size);
 	shape->setPosition(_position);
+	SetOriginAtMiddle(shape);
+	size = _size;
 	hall = nullptr;
 
 	if (type== ET_EXTERNE)
@@ -18,9 +21,4 @@ Tile::Tile( const Vector2f& _position, const TileType& _type, const Vector2f& _s
 Tile::~Tile()
 {
 	delete shape;
-}
-
-void Tile::Update()
-{
-
 }

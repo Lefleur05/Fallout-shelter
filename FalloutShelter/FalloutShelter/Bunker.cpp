@@ -1,4 +1,7 @@
 #include "Bunker.h"
+#include "Food.h"
+#include "Water.h"
+#include "Electicity.h"
 
 Bunker::Bunker()
 {
@@ -37,7 +40,7 @@ Bunker::~Bunker()
 
 void Bunker::InitRessource()
 {
-	ressources.push_back(new Ressource("Food", 0, 0, 0));
-	ressources.push_back(new Ressource("Water", 0, 0, 0));
-	ressources.push_back(new Ressource("Electricity", 0, 0, 0));
+	ressources.push_back(new Electicity(0, 0, 0));
+	ressources.push_back(new Food(0, 0, 0));
+	ressources.push_back(new Water(0, 0, 0));
 }

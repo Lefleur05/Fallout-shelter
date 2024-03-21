@@ -7,8 +7,9 @@
 #include"GridNav.h"
 #include "Canvas.h"
 #include "TitleMenu.h"
-#include "Bunker.h"
 #include "BuildMenu.h"
+#include "TextWidget.h"
+#include "ProgressBar.h"
 
 using namespace sf;
 using namespace std;
@@ -19,6 +20,10 @@ class Game
 	Canvas* canvas;
 	TitleMenu* titleMenu;
 	BuildMenu* buildMenu;
+
+	TextWidget* capsuleCount;
+	ProgressBar* electricityBar;
+
 
 	Zombie* zombie;
 	GridNav* grid;
@@ -35,6 +40,7 @@ public:
 	
 
 	void Update();
+	void UpdateUIInfo();
 	void UpdateWindow();
 };
 

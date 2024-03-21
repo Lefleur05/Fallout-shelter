@@ -25,7 +25,15 @@ public:
 	{
 		return allHuman;
 	}
+	vector<Ressource*> GetAllRessource()
+	{
+		return ressources;
+	}
 
+	void SetMoney(const int& _money)
+	{
+		money = _money;
+	}
 
 public:
 	Bunker();
