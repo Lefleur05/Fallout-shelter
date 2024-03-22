@@ -12,8 +12,8 @@ using namespace std;
 struct VillagerInfo
 {
 	ShapeObject* villagerInfoShape;
+	ShapeObject* villagerHead;
 	vector<TextWidget*> villagerInfoText;
-	Canvas* canvas;
 
 public:
 	ShapeObject* GetVillagerInfoShape()
@@ -21,10 +21,16 @@ public:
 		return villagerInfoShape;
 	}
 
+	vector<TextWidget*> GetVillagerInfoText()
+	{
+		return villagerInfoText;
+	}
+
 	vector<Drawable*> GetDrawables()
 	{
 		vector<Drawable*> _drawables;
 		_drawables.push_back(villagerInfoShape->GetDrawable());
+		_drawables.push_back(villagerHead->GetDrawable());
 		for (TextWidget* _text: villagerInfoText)
 		{
 			_drawables.push_back(_text->GetDrawable());
@@ -37,7 +43,10 @@ public:
 	
 public:
 	void Init(Human* _human);
-	void CreateTextStat(const int& _state, const float& _positionX);
+	void InitStats(Human* _human);
+	void InitMentalHealth(Human* _human);
+	void InitVillagerHead();
+	void CreateTextStat(const string& _text, const float& _positionX);
 	void SetPositionY(const float& _positionY);
 
 
@@ -75,6 +84,7 @@ class VillagerInfoMenu
 	vector<Drawable*> backGround;
 	VillagerList* villagerInfo;
 	ShapeObject* frameMenu;
+	ShapeObject* frameStatName;
 	Canvas* canvas;
 
 	bool closedBuildMEnu;
@@ -95,6 +105,7 @@ public:
 public:
 	void Init();
 	void InitBackGround();
+	void InitStatsName();
 	void InitButtons();
 	void InitScrollBar();
 

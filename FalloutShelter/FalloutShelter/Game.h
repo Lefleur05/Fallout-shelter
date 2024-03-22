@@ -34,6 +34,8 @@ class Game
 	Zombie* zombie;
 	GridNav* grid;
 
+	Timer* timerRessource;
+
 	vector<Human*> allHuman;
 
 public:
@@ -47,6 +49,7 @@ public:
 	void InitButton();
 	void InitGridNav();
 	void InitTitleMenu();
+	void InitTimer();
 
 	void InitZombie();
 	

@@ -25,6 +25,7 @@ Game::Game()
 	electricityBar = nullptr;
 	foodBar = nullptr;
 	waterBar = nullptr;
+	timerRessource = nullptr;
 
 	Init();
 }
@@ -40,6 +41,7 @@ void Game::Init()
 	InitGridNav();
 	InitZombie();
 	InitTitleMenu();
+	InitTimer();
 }
 
 void Game::InitMap()
@@ -179,7 +181,7 @@ void Game::InitButton()
 	_villagerInfoButton->GetObject()->GetShape()->setFillColor(Color::Green);
 	canvas->AddWidget(_villagerInfoButton);
 
-	villagerCount = new TextWidget(TextData(to_string(PLAYERBUNKER->GetAllHuman().size()), Vector2f(WINDOW_SIZE.x / 100.0f * 4.0f, WINDOW_SIZE.y / 100.0f * 4.0f), "Overseer_Italic.otf", 50, Color::Green));
+	villagerCount = new TextWidget(TextData(/*to_string(PLAYERBUNKER->GetAllHuman().size())*/"", Vector2f(WINDOW_SIZE.x / 100.0f * 4.0f, WINDOW_SIZE.y / 100.0f * 4.0f), "Overseer_Italic.otf", 50, Color::Green));
 	canvas->AddWidget(villagerCount);
 
 	#pragma endregion
@@ -189,6 +191,18 @@ void Game::InitTitleMenu()
 {
 	titleMenu = new TitleMenu();
 	titleMenu->Update();
+}
+
+void Game::InitTimer()
+{
+	/*function<void()> _function = [&]()
+	{
+		PLAYERBUNKER->GetAllRessource()[0]->SetQuantity
+		PLAYERBUNKER->GetAllRessource()[1]->SetQuantity(PLAYERBUNKER->GetAllRessource()[1]->GetQuantity() - 1);
+		PLAYERBUNKER->GetAllRessource()[2]->SetQuantity(PLAYERBUNKER->GetAllRessource()[2]->GetQuantity() - 1);
+	};
+
+	timerRessource = new Timer(_function, seconds(10), true, true);*/
 }
 
 void Game::InitGridNav()
