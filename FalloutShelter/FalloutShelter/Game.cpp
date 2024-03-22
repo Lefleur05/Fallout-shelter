@@ -294,6 +294,11 @@ void Game::InitHuman()
 	//TODO Enlever cette ligne ( ligne de teste , trouver mieux)
 	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[0][3]->GetHall()->AddHumanInHall(_h);
 
+	Human* _h1 = new Human(ShapeData(_pos, _sizeHuman));
+	_h1->Init();
+	//TODO Enlever cette ligne ( ligne de teste , trouver mieux)
+	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[0][3]->GetHall()->AddHumanInHall(_h1);
+
 	Human* _hGenerator = new Human(ShapeData(_posGenerator, _sizeHuman));
 	_hGenerator->Init();
 	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[1][1]->GetHall()->AddHumanInHall(_hGenerator);

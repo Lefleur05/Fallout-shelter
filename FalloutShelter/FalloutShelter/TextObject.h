@@ -41,6 +41,11 @@ public:
 		return text->getGlobalBounds().getSize();
 	}
 
+	void SetShapePosition(const Vector2f& _position)
+	{
+		text->setPosition(_position);
+	}
+
 	void SetText(const string& _text)
 	{
 		text->setString(_text);
