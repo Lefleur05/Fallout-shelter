@@ -14,6 +14,7 @@ Hall::Hall(HallType _type)
 	humans = vector<Human*>();
 	canvas = nullptr;
 	timerRessource = nullptr;
+	quantity = 0;
 }
 
 void Hall::Init(Shape* _shape, Vector2f _size)
@@ -30,6 +31,32 @@ void Hall::Init(Shape* _shape, Vector2f _size)
 
 	InitButton(_shape, _size);
 	InitTimer();
+	InitQuantity();
+}
+
+void Hall::InitQuantity()
+{
+	quantity = humans.size() * 2;
+
+	int _index = -1;
+	switch (type)
+	{
+	case HALL_GENERATOR:
+		_index = 0;
+		break;
+	case HALL_FAST_FOOD:
+		_index = 1;
+		break;
+	case HALL_TRAITEMENT_DES_EAUX:
+		_index = 2;
+		break;
+	default:
+		break;
+	}
+	if (_index > -1)
+	{
+		PLAYERBUNKER->GetAllRessource()[_index]->SetMaxQuantity(PLAYERBUNKER->GetAllRessource()[_index]->GetMaxQuantity() + 25);
+	}
 }
 
 void Hall::InitTimer()
@@ -37,7 +64,8 @@ void Hall::InitTimer()
 	function<void()> _function = [&]()
 	{
 		cout << "Timer Begin" << endl;
-		canvas->SetVisibilityStatus(true);
+		cout << quantity << endl << endl;
+		DrawButton();
 		timerRessource->Pause();
 	};
 
@@ -86,6 +114,18 @@ void Hall::InitButton(Shape* _shape, Vector2f _size)
 	canvas->SetVisibilityStatus(false);
 }
 
+void Hall::DrawButton()
+{
+	if (humans.size() >= 2 && type == HALL_DORTOIR)
+	{
+		canvas->SetVisibilityStatus(true);
+	}
+	else if (humans.size() >= 1 && type != HALL_DORTOIR)
+	{
+		canvas->SetVisibilityStatus(true);
+	}
+}
+
 void Hall::AddRessourceType()
 {
 	int _index=-1;
@@ -130,6 +170,12 @@ void Hall::AddRessourceType()
 		PLAYERBUNKER->GetAllRessource()[_index]->SetQuantity(PLAYERBUNKER->GetAllRessource()[_index]->GetMaxQuantity());
 		return;
 	}
-	PLAYERBUNKER->GetAllRessource()[_index]->SetQuantity(PLAYERBUNKER->GetAllRessource()[_index]->GetQuantity()+1);
+	PLAYERBUNKER->GetAllRessource()[_index]->SetQuantity(PLAYERBUNKER->GetAllRessource()[_index]->GetQuantity()+ quantity);
+	quantity = humans.size() * 2;
 
+}
+
+void Hall::AddHumanInHall(Human* _human)
+{
+	humans.push_back(_human);
 }

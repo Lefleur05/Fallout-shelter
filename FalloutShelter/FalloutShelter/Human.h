@@ -41,6 +41,12 @@ class Human: public Entity
 
 
 public:
+	StatsHuman* GetStats()
+	{
+		return stats;
+	}
+
+public:
 	Human(const ShapeData& _data);
 };
 

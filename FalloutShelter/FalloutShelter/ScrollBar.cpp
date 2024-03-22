@@ -2,7 +2,7 @@
 #include "Game.h"
 #include <iostream>
 
-#define PATH_BAR "UIs/Menus/Achievements/ScrollBar/Bar.png"
+#define PATH_BAR "Icon/ScrollBar.png"
 #define PATH_BUTTON "UIs/Menus/Achievements/ScrollBar/Button.png"
 
 ScrollBar::ScrollBar(const ShapeData& _data, const int _scrollAmount, const function<void(bool)>& _callback) : ShapeWidget(_data)
@@ -12,7 +12,7 @@ ScrollBar::ScrollBar(const ShapeData& _data, const int _scrollAmount, const func
 	scrollAmount = _scrollAmount;
 
 	const Vector2f& _buttonSize = Vector2f(35.0f, 35.0f);
-	bar = new ShapeWidget(ShapeData(Vector2f(_data.position.x, _data.position.y + 175.0f), Vector2f(_data.size.x, _data.size.y + 340.0f), PATH_BAR));
+	bar = new ShapeWidget(ShapeData(Vector2f(_data.position.x, _data.position.y + 175.0f), Vector2f(_data.size.x, _data.size.y + 340.0f), "Icon/Empty_Progresse_Bar.png"));
 }
 
 
