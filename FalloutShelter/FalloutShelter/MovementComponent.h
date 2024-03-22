@@ -35,7 +35,7 @@ public:
 	}
 	void SetCanMove(const bool _status);
 	void SetDestination(const Vector2f& _destination, const bool _canMove = true);
-	void Update(const float _deltaTime);
+	void Update(const float _deltaTime) override;
 	bool IsAtPosition() const;
 	bool GetCanMove() const
 	{

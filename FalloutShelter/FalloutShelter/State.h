@@ -6,6 +6,7 @@
 using namespace std;
 
 class FSM;
+
 class State
 {
 	Transition* nextTransition = nullptr;

@@ -4,6 +4,7 @@
 HumainMovementComponent::HumainMovementComponent(Actor* _owner, const Vector2f& _targetPosition) : MovementComponent(_owner)
 {
 	pauseDuration = 1.0f;
+	destination = _owner->GetShapePosition();
 	startPosition = _owner->GetShapePosition();
 	targetPosition = startPosition + _targetPosition;
 	cout << targetPosition.x << " " << targetPosition.y << endl;

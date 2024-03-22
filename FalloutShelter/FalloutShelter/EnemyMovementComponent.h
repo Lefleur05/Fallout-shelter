@@ -10,17 +10,17 @@ class EnemyMovementComponent : public MovementComponent
 	float minRange;
 	float delaisPath;
 	int index = 0;
-	Timer* requestTimer;
-	Timer* moveTimer;
+	Timer* timeRequestPath;
+
 public:
 	virtual void Init() override;
+	void FollowPath(const float _deltaTime);
 	EnemyMovementComponent(Actor* _owner);
-	void TimerMove();
-	void Request();
-	void ChangePoint();
 	void SetGrid(GridNav* _grid)
 	{
 		grid = _grid;
 	}
+private:
+	void Request();
 };
 

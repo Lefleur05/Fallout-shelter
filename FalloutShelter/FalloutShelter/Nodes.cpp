@@ -12,10 +12,6 @@ Nodes::Nodes(const ShapeData& _data) : Actor(STRING_ID("Nodes"), _data)
 	F = G + H;
 }
 
-Nodes::~Nodes()
-{
-	delete parent;
-}
 
 void Nodes::ResteNode()
 {

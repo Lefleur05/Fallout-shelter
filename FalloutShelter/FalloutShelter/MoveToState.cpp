@@ -7,7 +7,7 @@
 
 MoveToState::MoveToState(FSM* _owner) : State(_owner)
 {
-	moveToAttack = new MoveToTransiton();
+	moveToAttack = new MoveToTransiton(_owner);
 	transitions.push_back(moveToAttack);
 }
 
@@ -19,12 +19,11 @@ void MoveToState::Init()
 void MoveToState::Start()
 {
 	cout << fsm->GetOwner()->GetID() << "Start MoveTo State" << endl;
-	//fsm->GetOwner()->GetComponent<EnemyMovementComponent>()->TimerMove();
 }
 
 void MoveToState::Update(const float _deltaTime)
 {
-	//cout << fsm->GetOwner()->GetID() << endl;
+	fsm->GetOwner()->GetComponent<EnemyMovementComponent>()->FollowPath(_deltaTime);
 }
 
 void MoveToState::Stop()

@@ -42,23 +42,6 @@ Nodes* GridNav::GetClosesNode(Vector2f _location)
 
 void GridNav::Generate()
 {
-	//if (!data)
-	//	return;
- //   vector<Nodes*>& _nodes = data->GetNodes();
- //   _nodes.clear();
- //   const Vector2f& _nodeSize = Vector2f(10, 10);
-	//for (int x = 0; x < size; x++)
-	//{
-	//	for (int y = 0; y < size; y++)
-	//	{
-	//		const Vector2f& _pos = Vector2f(x * _nodeSize.x + x * gap, y * _nodeSize.y + y * gap) + position;
-	//		Nodes* _n = new Nodes(ShapeData(_pos, _nodeSize));
- //           //_n->SetGridPointData(data);
- //           _nodes.push_back(_n);
-	//	}
-	//}
-	//SetSuccessors();
-
     nodes.clear();
     const Vector2f& _nodeSize = Vector2f(10, 10);
     for (int x = 0; x < size; x++)

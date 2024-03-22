@@ -18,7 +18,6 @@ class Nodes : public Actor
 public:
 	Nodes(const ShapeData& _data, GridNav* _grid);
 	Nodes(const ShapeData& _data);
-	~Nodes();
 	void ResteNode();
 	void AddSuccessor(const int _successors)
 	{

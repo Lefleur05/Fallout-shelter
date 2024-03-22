@@ -2,12 +2,13 @@
 #include "AnimationComponent.h"
 #include "Actor.h"
 #include"Macro.h"
+#include "DevUtils.h"
 
 MovementComponent::MovementComponent(Actor* _owner) : Component(_owner)
 {
 	canMove = true;
 	minRange = 0.5f;
-	destination = _owner->GetShapePosition();
+	//destination = _owner->GetShapePosition();
 	speed = 0.2f;
 	collision = _owner->GetComponent<CollisionComponent>();
 }
@@ -73,6 +74,7 @@ void MovementComponent::MoveToDestination(const float _deltaTime)
 
 	const Vector2f& _position = _shape->getPosition() + _direction * speed * _deltaTime;
 	_shape->setPosition(_position);
+	//LOG("Move");
 }
 
 //bool MobMovementComponent::CheckGround()
@@ -86,12 +88,12 @@ void MovementComponent::MoveToDestination(const float _deltaTime)
 
 void MovementComponent::Update(const float _deltaTime)
 {
+	Component::Update(_deltaTime);
 	MoveToDestination(_deltaTime);
 
 	Vector2f _offset = Vector2f(0.0f, 0.0f);
 	Vector2f _direction = destination;
 	Normalize(_direction);
-
 	//if (isOnGround && owner->GetComponent<EnemyLifeComponent>()->GetLife() <= 0)
 	//{
 	//	owner->GetComponent<AnimationComponent>()->GetCurrentAnimation()->StopLoopAnimation();

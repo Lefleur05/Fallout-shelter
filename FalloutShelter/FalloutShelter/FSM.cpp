@@ -2,14 +2,15 @@
 #include <iostream>
 
 
-void FSM::SetCurrentState(State* _currentState)
-{
-	currentState = _currentState;
-}
 
 FSM::FSM(Actor* _owner) : Component(_owner)
 {
 
+}
+
+void FSM::SetCurrentState(State* _currentState)
+{
+	currentState = _currentState;
 }
 
 FSM::~FSM()

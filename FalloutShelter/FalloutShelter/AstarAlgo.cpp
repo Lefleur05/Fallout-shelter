@@ -1,22 +1,11 @@
 #include "AstarAlgo.h"
 #include"GridNav.h"
 
-AstarAlgo::AstarAlgo()
-{
-	
-}
-
-
-AstarAlgo::~AstarAlgo()
-{
-
-}
 
 void AstarAlgo::ComputePath(Nodes* _start, Nodes* _end)
 {
 	_start->GetGridNav()->RestCost();
 	correctPath.clear();
-
 	vector<Nodes*> _openList = vector<Nodes*>();
 	vector<Nodes*> _closeList = vector<Nodes*>();
 
@@ -28,6 +17,7 @@ void AstarAlgo::ComputePath(Nodes* _start, Nodes* _end)
 	while (_openList.size() > 0)
 	{
 		Nodes* _current = _openList[0];
+		_openList.erase(_openList.begin());
 		_closeList.push_back(_current);
 		if (_current == _end)
 		{
@@ -60,11 +50,12 @@ vector<Nodes*> AstarAlgo::GetFinalPath(Nodes* _start, Nodes* _end)
 	Nodes* _current = _end;
 	_path.push_back(_end);
 
-	while (_current != _end)
+	while (_current != _start)
 	{
 		_path.push_back(_current->GetParent());
 		_current = _current->GetParent();
 	}
+	reverse(_path.begin(), _path.end());
 	return _path;
 }
 

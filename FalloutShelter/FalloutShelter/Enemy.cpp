@@ -8,5 +8,7 @@ Enemy::Enemy(const string& _name, const ShapeData& _data) : Entity(_name, _data,
 
 void Enemy::Update(const float _deltaTime)
 {
-	Actor::Update(_deltaTime);
+	Entity::Update(_deltaTime);
+	//move->FollowPath(_deltaTime);
 }
+

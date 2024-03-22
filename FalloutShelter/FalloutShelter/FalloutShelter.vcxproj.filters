@@ -324,6 +324,12 @@
     <ClCompile Include="ProgressBar.cpp">
       <Filter>Source Files\ProgressBar</Filter>
     </ClCompile>
+    <ClCompile Include="HumainMovementComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DevUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -544,6 +550,12 @@
     </ClInclude>
     <ClInclude Include="ProgressBar.h">
       <Filter>Source Files\ProgressBar</Filter>
+    </ClInclude>
+    <ClInclude Include="HumainMovementComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DevUtils.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

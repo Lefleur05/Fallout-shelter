@@ -11,6 +11,8 @@
 #define EMPTY_PROGRESS_BAR "Icon/Empty_Progresse_Bar.png"
 #define FILLED_PROGRESS_BAR  "Icon/Filled_Progresse_Bar.png"
 
+//#define ZOMBIE_PATH ""
+
 Game::Game()
 {
 	map = nullptr;
@@ -32,7 +34,7 @@ void Game::Init()
 	canvas = new Canvas("Button");
 	InitMap();
 	InitUIInfo();
-	//InitButton();
+	InitButton();
 	InitHuman();
 	InitButton();
 	InitGridNav();
@@ -189,17 +191,18 @@ void Game::InitTitleMenu()
 	titleMenu->Update();
 }
 
+void Game::InitGridNav()
+{
+	grid = new GridNav(10, 50, Vector2f(50, 150));
+	//grid->GetNodes()[80]->GetShape()->setFillColor(Color::Red);
+}
+
 void Game::InitZombie()
 {
 	Zombie* _zombie = new Zombie(ShapeData(grid->GetNodes()[99]->GetShapePosition(), Vector2f(20, 60)));
+	_zombie->GetComponent<EnemyMovementComponent>()->SetGrid(grid);
 	_zombie->GetShape()->setFillColor(Color::Cyan);
 	_zombie->Init();
-	_zombie->GetComponent<EnemyMovementComponent>()->SetGrid(grid);
-}
-
-void Game::InitGridNav()
-{
-	grid = new GridNav(10, 50, Vector2f(50, 50));
 }
 
 

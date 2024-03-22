@@ -36,6 +36,7 @@
     <ClCompile Include="Canvas.cpp" />
     <ClCompile Include="CollisionComponent.cpp" />
     <ClCompile Include="Component.cpp" />
+    <ClCompile Include="DevUtils.cpp" />
     <ClCompile Include="Electicity.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyMovementComponent.cpp" />
@@ -113,6 +114,7 @@
     <ClInclude Include="Canvas.h" />
     <ClInclude Include="CollisionComponent.h" />
     <ClInclude Include="Component.h" />
+    <ClInclude Include="DevUtils.h" />
     <ClInclude Include="Electicity.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyMovementComponent.h" />
