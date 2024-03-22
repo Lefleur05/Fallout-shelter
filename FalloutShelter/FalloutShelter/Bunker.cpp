@@ -40,7 +40,13 @@ Bunker::~Bunker()
 
 void Bunker::InitRessource()
 {
-	ressources.push_back(new Electicity(0, 0, 10));
-	ressources.push_back(new Food(0, 0, 10));
-	ressources.push_back(new Water(0, 0, 10));
+	ressources.push_back(new Electicity(5, 0, 10));
+	ressources.push_back(new Food(5, 0, 10));
+	ressources.push_back(new Water(5, 0, 10));
+}
+
+void Bunker::RemoveRessource()
+{
+	//int quantityRemove = ressources[0]->GetQuantity() - 1 >= 0 ? ressources[0]->GetQuantity() - 1 : 0;
+	//ressources[0]->SetQuantity(ressources)
 }

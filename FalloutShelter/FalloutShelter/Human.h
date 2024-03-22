@@ -19,6 +19,8 @@ struct StatsHuman
 	//chance
 	int luck;
 
+	int mentalHealth;
+
 public:
 	StatsHuman()
 	{
@@ -28,13 +30,13 @@ public:
 		charism = 1;
 		agility = 1;
 		luck = 1;
+		mentalHealth = 100;
 	}
 };
 
 class Human: public Entity
 {
 	StatsHuman* stats;
-	int mentalHealth;
 	Armor* armor;
 	Weapons* weapons;
 	HumanMovementComponent* movement;
@@ -45,7 +47,6 @@ public:
 	{
 		return stats;
 	}
-
 public:
 	Human(const ShapeData& _data);
 };

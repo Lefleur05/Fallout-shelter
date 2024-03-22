@@ -6,12 +6,119 @@
 #include "TextureManager.h"
 #include "HUD.h"
 
+#define VILLAGER_HEAD_PATH "VillagerHead.png"
+
+VillagerInfo::VillagerInfo(Human* _human)
+{
+	villagerInfoShape = nullptr;
+	villagerHead = nullptr;
+	villagerInfoText = vector<TextWidget*>();
+	Init(_human);
+}
+
+void VillagerInfo::Init(Human* _human)
+{
+	villagerInfoShape = new ShapeObject(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f * 7.5f, 0.0f), Vector2f(WINDOW_SIZE.x / 100.0f * 85.0f, WINDOW_SIZE.y / 100.0f * 20.0f)));
+	InitStats(_human);
+	InitMentalHealth(_human);
+	InitVillagerHead();
+}
+
+void VillagerInfo::InitStats(Human* _human)
+{
+	StatsHuman* _stats = _human->GetStats();
+	CreateTextStat(to_string(_stats->strength), 35.0f);
+	CreateTextStat(to_string(_stats->perception), 40.0f);
+	CreateTextStat(to_string(_stats->endurance), 45.0f);
+	CreateTextStat(to_string(_stats->charism), 50.0f);
+	CreateTextStat(to_string(_stats->agility), 55.0f);
+	CreateTextStat(to_string(_stats->luck), 60.0f);
+}
+
+void VillagerInfo::InitMentalHealth(Human* _human)
+{
+	StatsHuman* _stats = _human->GetStats();
+	CreateTextStat(to_string(_stats->mentalHealth) + "%", 75.0f);
+}
+
+void VillagerInfo::InitVillagerHead()
+{
+	villagerHead = new ShapeObject(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f *10.0f, 0.0f), Vector2f(WINDOW_SIZE.x / 100.0f * 10.0f, WINDOW_SIZE.y / 100.0f * 10.0f), VILLAGER_HEAD_PATH));
+}
+
+void VillagerInfo::CreateTextStat(const string& _text, const float& _positionX)
+{
+	TextWidget* _infoStat = new TextWidget(TextData(_text, Vector2f(WINDOW_SIZE.x / 100.0f * _positionX, 0.0f), "Overseer_Italic.otf", 50));
+	villagerInfoText.push_back(_infoStat);
+}
+
+void VillagerInfo::SetPositionY(const float& _positionY)
+{
+	villagerInfoShape->SetShapePosition(Vector2f(villagerInfoShape->GetShapePosition().x, _positionY));
+	villagerHead->SetShapePosition(Vector2f(villagerHead->GetShapePosition().x, _positionY+ WINDOW_SIZE.y / 100.0f * 5.5f));
+
+	for (TextWidget* _text : villagerInfoText)
+	{
+		_text->GetObject()->SetShapePosition(Vector2f(_text->GetObject()->GetShapePosition().x, _positionY+ WINDOW_SIZE.y / 100.0f * 5.5f));
+	}
+}
+
+
+
+VillagerList::VillagerList()
+{
+	villagerList = vector<VillagerInfo*>();
+	Init();
+}
+
+void VillagerList::Set3VillagerInfoPosition(const int& _scrole)
+{
+	vector<float> _positionY = {
+		WINDOW_SIZE.y / 100.0f * 17.5f,
+		WINDOW_SIZE.y / 100.0f * 40.0f,
+		WINDOW_SIZE.y / 100.0f * 62.5f,
+	};
+
+	villagerList[_scrole]->SetPositionY(_positionY[0]);
+	villagerList[_scrole+1]->SetPositionY(_positionY[1]);
+	villagerList[_scrole + 2]->SetPositionY(_positionY[2]);
+}
+
+void VillagerList::UpdateVillagerList()
+{
+	villagerList = vector<VillagerInfo*>();
+	Init();
+}
+
+void VillagerList::Init()
+{
+	int _index = 0;
+	for (int _i = 0; _i < PLAYERBUNKER->GetAllHuman().size(); _i++)
+	{
+		villagerList.push_back(new VillagerInfo(PLAYERBUNKER->GetAllHuman()[_i]));
+		villagerList[_i]->GetVillagerInfoShape()->GetShape()->setFillColor(Color(0,128,0));// vert foncé
+		if (_index==1)
+		{
+			villagerList[_i]->GetVillagerInfoShape()->GetShape()->setFillColor(Color::Green);
+		}
+		if (_index==2)
+		{
+			villagerList[_i]->GetVillagerInfoShape()->GetShape()->setFillColor(Color::Red);
+			_index = -1;
+		}
+		_index++;
+	}
+}
+
+
+
 VillagerInfoMenu::VillagerInfoMenu()
 {
 	handle = nullptr;
 	backGround = vector<Drawable*>();
 	villagerInfo = new VillagerList();
 	frameMenu = nullptr;
+	frameStatName = nullptr;
 	canvas = nullptr;
 	closedBuildMEnu = false;
 	scrole = 0;
@@ -25,9 +132,11 @@ VillagerInfoMenu::~VillagerInfoMenu()
 
 void VillagerInfoMenu::Init()
 {
+	canvas = new Canvas("BuildMenu");
 	InitBackGround();
 	InitButtons();
 	InitScrollBar();
+	InitStatsName();
 	canvas->SetVisibilityStatus(false);
 }
 
@@ -41,10 +150,38 @@ void VillagerInfoMenu::InitBackGround()
 	frameMenu->GetShape()->setOutlineColor(Color::Green);
 }
 
+void VillagerInfoMenu::InitStatsName()
+{
+
+	vector<float> _positionX = {
+		WINDOW_SIZE.x / 100.0f * 35.0f,
+		WINDOW_SIZE.x / 100.0f * 40.0f,
+		WINDOW_SIZE.x / 100.0f * 45.0f,
+		WINDOW_SIZE.x / 100.0f * 50.0f,
+		WINDOW_SIZE.x / 100.0f * 55.0f,
+		WINDOW_SIZE.x / 100.0f * 60.0f,
+	};
+
+	vector<string> _name = { "S", "P", "E", "C", "A", "L" };
+
+	TextWidget* _infoStat;
+
+	for (int _i = 0; _i < 6; _i++)
+	{
+		_infoStat = new TextWidget(TextData(_name[_i], Vector2f(_positionX[_i], WINDOW_SIZE.y / 100.0f * 10.0f), "Overseer_Italic.otf", 50));
+		canvas->AddWidget(_infoStat);
+	}
+
+	frameStatName = new ShapeObject(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f * 48.5f, WINDOW_SIZE.y / 100.0f*14.0f), Vector2f(WINDOW_SIZE.x / 100.0f * 30.0f, WINDOW_SIZE.y / 100.0f * 5.0f)));
+	SetOriginAtMiddle(frameStatName->GetShape());
+	frameStatName->GetShape()->setFillColor(Color::Black);
+	frameStatName->GetShape()->setOutlineThickness(5.0f);
+	frameStatName->GetShape()->setOutlineColor(Color::Green);
+
+}
+
 void VillagerInfoMenu::InitButtons()
 {
-	canvas = new Canvas("BuildMenu");
-
 	#pragma region CloseButton
 	float _sizeX = WINDOW_SIZE.x / 100.0f * 10.0f;
 	float _sizeY = WINDOW_SIZE.x / 100.0f * 5.0f;
@@ -78,24 +215,6 @@ void VillagerInfoMenu::InitScrollBar()
 	canvas->AddWidget(handle);
 }
 
-void VillagerList::Set3VillagerInfoPosition(const int& _scrole)
-{
-	vector<float> _positionY = {
-		WINDOW_SIZE.y / 100.0f * 17.5f,
-		WINDOW_SIZE.y / 100.0f * 40.0f,
-		WINDOW_SIZE.y / 100.0f * 62.5f,
-	};
-
-	villagerList[_scrole]->SetPositionY(_positionY[0]);
-	villagerList[_scrole+1]->SetPositionY(_positionY[1]);
-	villagerList[_scrole + 2]->SetPositionY(_positionY[2]);
-}
-
-void VillagerList::UpdateVillagerList()
-{
-	villagerList = vector<VillagerInfo*>();
-	Init();
-}
 void VillagerInfoMenu::Update()
 {
 	// Quand tu scrolle la valeur scrole augment ou descend 
@@ -129,6 +248,7 @@ void VillagerInfoMenu::UpdateWindow()
 		WINDOW->draw(*_drawable);
 	}
 	WINDOW->draw(*frameMenu->GetShape());
+	WINDOW->draw(*frameStatName->GetShape());
 
 	for (Widget* _widget : canvas->GetUiWidgets())
 	{
@@ -153,36 +273,9 @@ void VillagerInfoMenu::UpdateWindow()
 		{
 			WINDOW->draw(*_drawable);
 		}
-		//cout << scrole << endl;
 	}
 
 	WINDOW->display();
-}
-
-VillagerList::VillagerList()
-{
-	villagerList = vector<VillagerInfo*>();
-	Init();
-}
-
-void VillagerList::Init()
-{
-	int _index = 0;
-	for (int _i = 0; _i < PLAYERBUNKER->GetAllHuman().size(); _i++)
-	{
-		villagerList.push_back(new VillagerInfo(PLAYERBUNKER->GetAllHuman()[_i]));
-		villagerList[_i]->GetVillagerInfoShape()->GetShape()->setFillColor(Color(0,128,0));// vert foncé
-		if (_index==1)
-		{
-			villagerList[_i]->GetVillagerInfoShape()->GetShape()->setFillColor(Color::Green);
-		}
-		if (_index==2)
-		{
-			villagerList[_i]->GetVillagerInfoShape()->GetShape()->setFillColor(Color::Red);
-			_index = -1;
-		}
-		_index++;
-	}
 }
 
 void VillagerInfoMenu::ComputeScroll(VillagerList* _data, const bool _scrollType)
@@ -194,47 +287,5 @@ void VillagerInfoMenu::ComputeScroll(VillagerList* _data, const bool _scrollType
 	if (scrole+2 >= _data->GetVillagerList().size())
 	{
 		scrole = scrole-1;
-	}
-	//cout << scrole << endl;
-}
-
-VillagerInfo::VillagerInfo(Human* _human)
-{
-	villagerInfoShape = nullptr;
-	villagerInfoText = vector<TextWidget*>();
-	Init(_human);
-}
-
-
-void VillagerInfo::Init(Human* _human)
-{
-	villagerInfoShape = new ShapeObject(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f * 7.5f, 0.0f), Vector2f(WINDOW_SIZE.x / 100.0f * 85.0f, WINDOW_SIZE.y / 100.0f * 20.0f)));
-
-#pragma region textStat
-
-	StatsHuman* stats = _human->GetStats();
-	CreateTextStat(stats->strength, 50.0f);
-	CreateTextStat(stats->perception, 50.0f);
-	CreateTextStat(stats->endurance, 50.0f);
-	CreateTextStat(stats->charism, 50.0f);
-	CreateTextStat(stats->agility, 50.0f);
-	CreateTextStat(stats->luck, 50.0f);
-
-#pragma endregion
-}
-
-void VillagerInfo::CreateTextStat(const int& _state, const float& _positionX)
-{
-	TextWidget* _infoStat = new TextWidget(TextData(to_string(_state), Vector2f(WINDOW_SIZE.x/100.0f* _positionX, 0.0f)));
-	villagerInfoText.push_back(_infoStat);
-}
-
-void VillagerInfo::SetPositionY(const float& _positionY)
-{
-	villagerInfoShape->SetShapePosition(Vector2f(villagerInfoShape->GetShapePosition().x, _positionY));
-
-	for (TextWidget* _text : villagerInfoText)
-	{
-		_text->GetObject()->SetShapePosition(Vector2f(_text->GetObject()->GetShapePosition().x, _positionY));
 	}
 }

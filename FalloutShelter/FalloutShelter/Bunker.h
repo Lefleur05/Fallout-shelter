@@ -47,7 +47,8 @@ public:
 
 public:
 	void InitRessource();
-
+	void RemoveRessource();
+	
 
 
 

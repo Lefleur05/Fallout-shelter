@@ -63,8 +63,6 @@ void Hall::InitTimer()
 {
 	function<void()> _function = [&]()
 	{
-		cout << "Timer Begin" << endl;
-		cout << quantity << endl << endl;
 		DrawButton();
 		timerRessource->Pause();
 	};
@@ -79,7 +77,6 @@ void Hall::InitButton(Shape* _shape, Vector2f _size)
 	Button* _buttonRessource = new Button(ShapeData(_position, _size*0.75f), ButtonData());
 	_buttonRessource->GetData().pressedCallback = [&]()
 	{
-		cout << "Ressource" << endl;
 		AddRessourceType();
 		canvas->SetVisibilityStatus(false);
 		timerRessource->Start();
