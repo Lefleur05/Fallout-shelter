@@ -20,7 +20,6 @@ void Spawner::SpawnWave()
 {
 	enemySpawn = new Zombie(ShapeData(grid->GetNodes()[99]->GetShapePosition(), Vector2f(20, 60)));
 	enemySpawn->GetComponent<EnemyMovementComponent>()->SetGrid(grid);
-	enemySpawn->GetShape()->setFillColor(Color::Blue);
 	enemySpawn->Init();
 }
 

@@ -6,8 +6,9 @@
 #include "DevUtils.h"
 #include"GridNav.h"
 
+#define ZOMBIE_PATH "Characters/Zombie.png"
 
-Zombie::Zombie(const ShapeData& _data) : Enemy(STRING_ID("Zombie"), _data)
+Zombie::Zombie(const ShapeData& _data) : Enemy(STRING_ID("Zombie"), ShapeData(_data.position, _data.size, ZOMBIE_PATH, _data.rect))
 {
 	fsmEnemy = new FSMEnemy(this);
 	components.push_back(fsmEnemy);

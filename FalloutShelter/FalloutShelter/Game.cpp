@@ -58,7 +58,6 @@ void Game::InitMap()
 
 void Game::InitUIInfo()
 {
-	return;
 	Vector2f _sizeIcon = Vector2f(50.0f, 50.0f);
 
 	#pragma region Capsule/Money
@@ -124,7 +123,6 @@ void Game::InitUIInfo()
 
 void Game::InitButton()
 {
-	return;
 	#pragma region _modeBuildButton
 
 	buildMenu = new BuildMenu();
@@ -217,7 +215,6 @@ void Game::InitZombie()
 {
 	zombie = new Zombie(ShapeData(grid->GetNodes()[99]->GetShapePosition(), Vector2f(20, 60)));
 	zombie->GetComponent<EnemyMovementComponent>()->SetGrid(grid);
-	zombie->GetShape()->setFillColor(Color::Cyan);
 	zombie->Init();
 }
 
@@ -243,7 +240,6 @@ void Game::Update()
 
 void Game::UpdateUIInfo()
 {
-	return;
 	capsuleCount->GetObject()->SetText(to_string(PLAYERBUNKER->GetMoney()));
 
 	electricityBar->SetValue(PLAYERBUNKER->GetAllRessource()[0]->GetQuantity());
