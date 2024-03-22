@@ -14,7 +14,7 @@ public:
 	}
 public:
 	Transition(FSM* _owner);
-	virtual void Init(State* _nextState);
+	virtual void Init();
 	virtual bool CanNext() const;
 };
 

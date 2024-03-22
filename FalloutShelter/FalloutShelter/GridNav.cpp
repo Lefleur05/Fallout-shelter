@@ -50,6 +50,7 @@ void GridNav::Generate()
         {
             const Vector2f& _pos = Vector2f(x * _nodeSize.x + x * gap, y * _nodeSize.y + y * gap) + position;
             Nodes* _n = new Nodes(ShapeData(_pos, _nodeSize),this);
+            _n->GetShape()->setFillColor(Color::Transparent);
             nodes.push_back(_n);
         }
     }

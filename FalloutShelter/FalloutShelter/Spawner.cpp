@@ -2,24 +2,27 @@
 #include"ActorManager.h"
 #include <iostream>
 #include"Macro.h"
+#include"GridNav.h"
 
-Spawner::Spawner(Entity* _entitySpawn, Vector2f _location,Vector2f _size, int _numberEntity)
+
+void Spawner::Init()
 {
-	Spawn(_entitySpawn,_location,_size, _numberEntity);
+	timeToWave = new Timer([&]() {SpawnWave(); }, seconds(10), true, true);
 }
 
-Spawner::~Spawner()
+Spawner::Spawner(const string& _name, const ShapeData& _data, Zombie* _enemySpawn, GridNav* _grid) : Actor(STRING_ID(_name), _data)
 {
-
+	enemySpawn = _enemySpawn;
+	grid = _grid;
 }
 
-void Spawner::Spawn(Entity* _entitySpawn,Vector2f _location,Vector2f _size, int _numberEntity)
+void Spawner::SpawnWave()
 {
-	for (size_t i = 0; i < _numberEntity; i++)
-	{
-		ShapeData _shapeData = ShapeData(_location, _size);
-		_entitySpawn = new Entity("Entity", _shapeData);
-		_entitySpawn->Init();
-	}
+	enemySpawn = new Zombie(ShapeData(grid->GetNodes()[99]->GetShapePosition(), Vector2f(20, 60)));
+	enemySpawn->GetComponent<EnemyMovementComponent>()->SetGrid(grid);
+	enemySpawn->GetShape()->setFillColor(Color::Blue);
+	enemySpawn->Init();
 }
+
+
 

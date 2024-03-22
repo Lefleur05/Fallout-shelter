@@ -49,6 +49,8 @@ public:
 	void InitTitleMenu();
 
 	void InitZombie();
+
+	void InitSpawner();
 	
 	void DrawActor();
 	void DrawMap();

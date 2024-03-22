@@ -5,11 +5,12 @@
 Transition::Transition(FSM* _owner)
 {
 	owner = _owner;
+	nextState = nullptr;
 }
 
-void Transition::Init(State* _nextState)
+void Transition::Init()
 {
-
+	
 }
 
 bool Transition::CanNext() const

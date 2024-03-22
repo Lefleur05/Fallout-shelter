@@ -1,16 +1,20 @@
 #pragma once
-#include"Entity.h"
+#include"Enemy.h"
 #include<SFML/Graphics.hpp>
 #include<vector>
-
+#include "Zombie.h"
 using namespace sf;
-class Spawner
+class GridNav;
+
+class Spawner : public Actor
 {
-	Vector2f location;
+	Timer* timeToWave;
+	Zombie* enemySpawn;
+	GridNav* grid;
+	int number;
 public:
-	Spawner(Entity* _entitySpawn, Vector2f _location,Vector2f _size, int _numberEntity = 1);
-	~Spawner();
-private:
-	 void Spawn(Entity* _entitySpawn, Vector2f _location,Vector2f _size,int _numberEntity = 1);
+	virtual void Init() override;
+	Spawner(const string& _name,const ShapeData& _data, Zombie* _enemySpawn, GridNav* _grid);
+	void SpawnWave();
 };
 

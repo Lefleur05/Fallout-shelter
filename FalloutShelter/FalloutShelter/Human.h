@@ -37,7 +37,7 @@ class Human: public Entity
 	int mentalHealth;
 	Armor* armor;
 	Weapons* weapons;
-	HumainMovementComponent* movement;
+	HumanMovementComponent* movement;
 
 
 public:

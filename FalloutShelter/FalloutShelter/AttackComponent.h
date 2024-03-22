@@ -7,11 +7,6 @@ class AttackComponent : public Component
 	int damages;
 	float cooldown;
 	Timer* cooldownTimer;
-private:
-	bool IsAttacking() const
-	{
-		return cooldown && cooldownTimer->IsRunning();
-	}
 public:
 	void SetDamages(const int _damages)
 	{

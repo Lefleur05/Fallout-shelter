@@ -8,21 +8,24 @@
 MoveToState::MoveToState(FSM* _owner) : State(_owner)
 {
 	moveToAttack = new MoveToTransiton(_owner);
+	moveToAttack->Init();
 	transitions.push_back(moveToAttack);
+
 }
 
 void MoveToState::Init()
 {
-	fsm->SetCurrentState(this);
+	State::Init();
 }
 
 void MoveToState::Start()
 {
-	cout << fsm->GetOwner()->GetID() << "Start MoveTo State" << endl;
+	State::Start();
 }
 
 void MoveToState::Update(const float _deltaTime)
 {
+	State::Update(_deltaTime);
 	fsm->GetOwner()->GetComponent<EnemyMovementComponent>()->FollowPath(_deltaTime);
 }
 

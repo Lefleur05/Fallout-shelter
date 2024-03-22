@@ -1,7 +1,7 @@
 #include "HumainMovementComponent.h"
 #include"Actor.h"
 
-HumainMovementComponent::HumainMovementComponent(Actor* _owner, const Vector2f& _targetPosition) : MovementComponent(_owner)
+HumanMovementComponent::HumanMovementComponent(Actor* _owner, const Vector2f& _targetPosition) : MovementComponent(_owner)
 {
 	pauseDuration = 1.0f;
 	destination = _owner->GetShapePosition();
@@ -10,14 +10,14 @@ HumainMovementComponent::HumainMovementComponent(Actor* _owner, const Vector2f& 
 	cout << targetPosition.x << " " << targetPosition.y << endl;
 }
 
-void HumainMovementComponent::ChangeTargetPosition()
+void HumanMovementComponent::ChangeTargetPosition()
 {
 	const bool _isAtDestination = GetDestination() == startPosition;
 	cout << _isAtDestination << endl;
 	SetDestination(_isAtDestination ? targetPosition : startPosition);
 }
 
-void HumainMovementComponent::Init()
+void HumanMovementComponent::Init()
 {
 	SetCallback([&]()
 	{

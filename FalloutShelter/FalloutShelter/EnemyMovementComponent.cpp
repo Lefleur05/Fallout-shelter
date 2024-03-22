@@ -12,16 +12,15 @@ EnemyMovementComponent::EnemyMovementComponent(Actor* _owner) : MovementComponen
 	delaisPath = 1.f;
 	astar = new AstarAlgo();
 	canMove = true;
-	timeRequestPath = nullptr;
+	canAttack = false;
 }
 
 void EnemyMovementComponent::Request()
 {
-	if (!astar || !grid)
+	if (!astar || !grid || !owner)
 		return;
 	index = 0;
 	astar->ComputePath(grid->GetClosesNode(owner->GetShapePosition()), grid->GetClosesNode(grid->GetNodes()[80]->GetShapePosition()));
-	grid->GetNodes()[80]->GetShape()->setFillColor(Color::Cyan);
 }
 
 void EnemyMovementComponent::Init()
@@ -32,16 +31,22 @@ void EnemyMovementComponent::Init()
 void EnemyMovementComponent::FollowPath(const float _deltaTime)
 {
 	if (astar->GetPathList().size() == 0)
-	{
 		return;
-	}
 	const int& _max = astar->GetPathList().size() - 1; 
-	if (IsAtPosition() && index <_max)
+	if (IsAtPosition() && index < _max)
 	{
 		index++;
 	}
+	if (IsAtLocation())
+		canAttack = true;
 	SetDestination(astar->GetPathList()[index]->GetShapePosition());
 }
+
+bool EnemyMovementComponent::IsAtLocation()
+{
+	return Distance(owner->GetShapePosition(), grid->GetNodes()[80]->GetShapePosition()) <= minRange;
+}
+
 
 
 

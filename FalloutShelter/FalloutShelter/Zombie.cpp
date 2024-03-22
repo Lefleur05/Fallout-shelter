@@ -4,6 +4,7 @@
 #include"Macro.h"
 #include <iostream>
 #include "DevUtils.h"
+#include"GridNav.h"
 
 
 Zombie::Zombie(const ShapeData& _data) : Enemy(STRING_ID("Zombie"), _data)
@@ -14,7 +15,14 @@ Zombie::Zombie(const ShapeData& _data) : Enemy(STRING_ID("Zombie"), _data)
 	components.push_back(attack);
 }
 
+void Zombie::OnDestroy()
+{
+	Destroy();
+	move->GetTimeRequestPath()->Stop();
+}
+
 void Zombie::Init()
 {
 	Entity::Init();
+	timerToDestroy = new Timer([&]() {OnDestroy(); }, seconds(10), true, false);
 }

@@ -6,12 +6,13 @@
 #include "Macro.h"
 #include "TimerManager.h"
 #include "PlayerBunker.h"
+#include"Spawner.h"
 
 
 #define EMPTY_PROGRESS_BAR "Icon/Empty_Progresse_Bar.png"
 #define FILLED_PROGRESS_BAR  "Icon/Filled_Progresse_Bar.png"
 
-//#define ZOMBIE_PATH ""
+#define ZOMBIE_PATH "Characters/Zombie.png"
 
 Game::Game()
 {
@@ -36,9 +37,9 @@ void Game::Init()
 	InitUIInfo();
 	InitButton();
 	InitHuman();
-	InitButton();
 	InitGridNav();
 	InitZombie();
+	InitSpawner();
 	InitTitleMenu();
 }
 
@@ -55,6 +56,7 @@ void Game::InitMap()
 
 void Game::InitUIInfo()
 {
+	return;
 	Vector2f _sizeIcon = Vector2f(50.0f, 50.0f);
 
 	#pragma region Capsule/Money
@@ -120,6 +122,7 @@ void Game::InitUIInfo()
 
 void Game::InitButton()
 {
+	return;
 	#pragma region _modeBuildButton
 
 	buildMenu = new BuildMenu();
@@ -194,17 +197,22 @@ void Game::InitTitleMenu()
 void Game::InitGridNav()
 {
 	grid = new GridNav(10, 50, Vector2f(50, 150));
-	//grid->GetNodes()[80]->GetShape()->setFillColor(Color::Red);
 }
 
 void Game::InitZombie()
 {
-	Zombie* _zombie = new Zombie(ShapeData(grid->GetNodes()[99]->GetShapePosition(), Vector2f(20, 60)));
-	_zombie->GetComponent<EnemyMovementComponent>()->SetGrid(grid);
-	_zombie->GetShape()->setFillColor(Color::Cyan);
-	_zombie->Init();
+	zombie = new Zombie(ShapeData(grid->GetNodes()[99]->GetShapePosition(), Vector2f(20, 60)));
+	zombie->GetComponent<EnemyMovementComponent>()->SetGrid(grid);
+	zombie->GetShape()->setFillColor(Color::Cyan);
+	zombie->Init();
 }
 
+void Game::InitSpawner()
+{
+	Spawner* _spawn = new Spawner("Spawner_Zombie", ShapeData(Vector2f(300, 10), Vector2f(10, 10)), zombie, grid);
+	_spawn->GetShape()->setFillColor(Color::Transparent);
+	_spawn->Init();
+}
 
 void Game::Update()
 {
@@ -221,6 +229,7 @@ void Game::Update()
 
 void Game::UpdateUIInfo()
 {
+	return;
 	capsuleCount->GetObject()->SetText(to_string(PLAYERBUNKER->GetMoney()));
 
 	electricityBar->SetValue(PLAYERBUNKER->GetAllRessource()[0]->GetQuantity());
@@ -287,32 +296,28 @@ void Game::InitHuman()
 {
 	Vector2f _sizeHuman = Vector2f(20, 50);
 	Vector2f _offset = Vector2f(20, 50);
-	Vector2f _pos = PositionHumanInHall(0, 3, _offset);
-	Vector2f _posGenerator = PositionHumanInHall(1, 1, _offset);
-	Vector2f _posDinner = PositionHumanInHall(1, 0, _offset);
-	Vector2f _posWaterTreatment = PositionHumanInHall(1, 3, _offset);
 
-	Human* _h = new Human(ShapeData(_pos, _sizeHuman));
+	Human* _h = new Human(ShapeData(PositionHumanInHall(0, 3, _offset), _sizeHuman));
 	_h->Init();
 	//TODO Enlever cette ligne ( ligne de teste , trouver mieux)
 	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[0][3]->GetHall()->AddHumanInHall(_h);
 
-	Human* _h1 = new Human(ShapeData(_pos, _sizeHuman));
+	Human* _h1 = new Human(ShapeData(PositionHumanInHall(0, 3, _offset), _sizeHuman));
 	_h1->Init();
 	//TODO Enlever cette ligne ( ligne de teste , trouver mieux)
 	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[0][3]->GetHall()->AddHumanInHall(_h1);
 
-	Human* _hGenerator = new Human(ShapeData(_posGenerator, _sizeHuman));
+	Human* _hGenerator = new Human(ShapeData(PositionHumanInHall(1, 1, _offset), _sizeHuman));
 	_hGenerator->Init();
 	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[1][1]->GetHall()->AddHumanInHall(_hGenerator);
 
 
-	Human* _hDinner = new Human(ShapeData(_posDinner, _sizeHuman));
+	Human* _hDinner = new Human(ShapeData(PositionHumanInHall(1, 0, _offset), _sizeHuman));
 	_hDinner->Init();
 	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[1][0]->GetHall()->AddHumanInHall(_hDinner);
 
 
-	Human* _hWaterTreatment = new Human(ShapeData(_posWaterTreatment, _sizeHuman));
+	Human* _hWaterTreatment = new Human(ShapeData(PositionHumanInHall(1, 3, _offset), _sizeHuman));
 	_hWaterTreatment->Init();
 	MapManager::GetInstance().GetCurrent()->GetGrid()->GetAllTiles()[1][3]->GetHall()->AddHumanInHall(_hWaterTreatment);
 

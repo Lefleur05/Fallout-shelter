@@ -1,7 +1,7 @@
 #pragma once
 #include"MovementComponent.h"
 
-class HumainMovementComponent : public MovementComponent
+class HumanMovementComponent : public MovementComponent
 {
 	float pauseDuration;
 	Vector2f startPosition;
@@ -9,7 +9,7 @@ class HumainMovementComponent : public MovementComponent
 	Timer* patrolTimer;
 
 public:
-	HumainMovementComponent(Actor* _owner,const Vector2f& _targetPosition);
+	HumanMovementComponent(Actor* _owner,const Vector2f& _targetPosition);
 public:
 	void SetTargetPosition(const Vector2f& _targetPosition)
 	{

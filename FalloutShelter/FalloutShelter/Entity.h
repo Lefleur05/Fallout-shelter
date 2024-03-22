@@ -14,6 +14,14 @@ public:
 	int GetLifeEntity()
 	{
 		return life;
+	}	
+	int ReduceLifeHuman()
+	{
+		if (life == 0)
+		{
+			return 0;
+		}
+		return life--;
 	}
 };
 

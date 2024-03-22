@@ -74,7 +74,6 @@ void MovementComponent::MoveToDestination(const float _deltaTime)
 
 	const Vector2f& _position = _shape->getPosition() + _direction * speed * _deltaTime;
 	_shape->setPosition(_position);
-	//LOG("Move");
 }
 
 //bool MobMovementComponent::CheckGround()

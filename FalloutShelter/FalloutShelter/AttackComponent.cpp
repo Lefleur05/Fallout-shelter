@@ -1,22 +1,23 @@
 #include "AttackComponent.h"
-#include"Game.h"
+#include "PlayerBunker.h"
 
 AttackComponent::AttackComponent(Actor* _owner, int _damages) : Component(_owner)
 {
 	damages = _damages;
-	cooldown = 0.5f;
+	cooldown = 1.f;
 	cooldownTimer = nullptr;
 }
 
 void AttackComponent::ApplyDamagesPlayer()
 {
-	//recuperer la vie des humain via le hall
+	for (size_t i = 0; i < PLAYERBUNKER->GetAllHuman().size(); i++)
+	{
+		PLAYERBUNKER->GetAllHuman()[i]->ReduceLifeHuman();
+	}
 }
 
 void AttackComponent::Attack()
 {
-	if (IsAttacking())
-		return;
 	ApplyDamagesPlayer();
 	cooldownTimer = new Timer([&]() {ApplyDamagesPlayer(); }, seconds(cooldown), true, true);
 }

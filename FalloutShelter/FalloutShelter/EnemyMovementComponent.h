@@ -11,16 +11,26 @@ class EnemyMovementComponent : public MovementComponent
 	float delaisPath;
 	int index = 0;
 	Timer* timeRequestPath;
-
+	bool canAttack = false;
 public:
 	virtual void Init() override;
 	void FollowPath(const float _deltaTime);
 	EnemyMovementComponent(Actor* _owner);
+	~EnemyMovementComponent();
 	void SetGrid(GridNav* _grid)
 	{
 		grid = _grid;
 	}
+	Timer* GetTimeRequestPath()
+	{
+		return timeRequestPath;
+	}	
+	bool GetCanAttack()
+	{
+		return canAttack;
+	}
 private:
+	bool IsAtLocation();
 	void Request();
 };
 

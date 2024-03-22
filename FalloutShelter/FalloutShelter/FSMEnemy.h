@@ -2,10 +2,12 @@
 #include"MoveToState.h"
 #include"Actor.h"
 #include"FSM.h"
+#include "AttackState.h"
 
 class FSMEnemy : public FSM
 {
 	MoveToState* moveTo = nullptr;
+	AttackState* attack = nullptr;
 public:
 	MoveToState* GetMoveTo()
 	{
