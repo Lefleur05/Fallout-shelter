@@ -21,6 +21,7 @@ Game::Game()
 	titleMenu = nullptr;
 	buildMenu = nullptr;
 	villagerInfoMenu = nullptr;
+	expeditionMenu = nullptr;
 	capsuleCount = nullptr;
 	villagerCount = nullptr;
 	electricityBar = nullptr;
@@ -153,11 +154,13 @@ void Game::InitButton()
 	#pragma endregion
 
 	#pragma region _modeExplorationButton
+	expeditionMenu = new ExpeditionMenu();
 	Button* _modeExplorationButton = new Button(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f * 5.0f, WINDOW_SIZE.y / 100.0f * 92.5f), Vector2f(100.0f, 100.0f)), ButtonData());
 	_modeExplorationButton->GetData().releasedCallback = [&]()
 	{
 		canvas->SetVisibilityStatus(false);
-		cout << "mode Exploration" << endl;
+		expeditionMenu->SetBackGround(MapManager::GetInstance().GetDrawables());
+		expeditionMenu->Update();
 		canvas->SetVisibilityStatus(true);
 	};
 	SetOriginAtMiddle(_modeExplorationButton->GetObject()->GetShape());
@@ -172,7 +175,6 @@ void Game::InitButton()
 	_villagerInfoButton->GetData().releasedCallback = [&]()
 	{
 		canvas->SetVisibilityStatus(false);
-		cout << "villager Info" << endl;
 		villagerInfoMenu->SetBackGround(MapManager::GetInstance().GetDrawables());
 		villagerInfoMenu->Update();
 		canvas->SetVisibilityStatus(true);

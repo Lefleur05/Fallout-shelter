@@ -6,17 +6,20 @@
 #include "ScrollBar.h"
 #include "TextWidget.h"
 #include "Human.h"
+#include "Button.h"
 using namespace sf;
 using namespace std;
 
 struct VillagerInfo
 {
-	ShapeObject* villagerInfoShape;
+	Button* villagerInfoShape;
 	ShapeObject* villagerHead;
 	vector<TextWidget*> villagerInfoText;
 
+	Human* human;
+
 public:
-	ShapeObject* GetVillagerInfoShape()
+	Button* GetVillagerInfoShape()
 	{
 		return villagerInfoShape;
 	}
@@ -38,19 +41,22 @@ public:
 		return _drawables;
 	}
 
+	void SetvillagerInfoText(vector<TextWidget*> _villagerInfoText)
+	{
+		villagerInfoText = _villagerInfoText;
+	}
+
 public:
 	VillagerInfo(Human* _human);
 	
 public:
-	void Init(Human* _human);
-	void InitStats(Human* _human);
-	void InitMentalHealth(Human* _human);
+	void Init();
+	void InitStats();
 	void InitVillagerHead();
 	void CreateTextStat(const string& _text, const float& _positionX);
 	void SetPositionY(const float& _positionY);
-
-
 };
+
 
 struct VillagerList
 {
@@ -87,6 +93,8 @@ class VillagerInfoMenu
 	ShapeObject* frameStatName;
 	Canvas* canvas;
 
+	Human* currentHuman;
+
 	bool closedBuildMEnu;
 
 	int scrole;
@@ -111,7 +119,8 @@ public:
 
 	void ComputeScroll(VillagerList* _data, const bool _scrollType);
 
-	void Update();
+	Human* Update();
+	void UpdateInit();
 	void UpdateWindow();
 };
 

@@ -13,31 +13,29 @@ VillagerInfo::VillagerInfo(Human* _human)
 	villagerInfoShape = nullptr;
 	villagerHead = nullptr;
 	villagerInfoText = vector<TextWidget*>();
-	Init(_human);
+	human = _human;
+	Init();
 }
 
-void VillagerInfo::Init(Human* _human)
+void VillagerInfo::Init()
 {
-	villagerInfoShape = new ShapeObject(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f * 7.5f, 0.0f), Vector2f(WINDOW_SIZE.x / 100.0f * 85.0f, WINDOW_SIZE.y / 100.0f * 20.0f)));
-	InitStats(_human);
-	InitMentalHealth(_human);
+
+	villagerInfoShape = new Button(ShapeData(Vector2f(WINDOW_SIZE.x / 2.0f, -10000.0f), Vector2f(WINDOW_SIZE.x / 100.0f * 85.0f, WINDOW_SIZE.y / 100.0f * 20.0f)));
+
+
+	InitStats();
 	InitVillagerHead();
 }
 
-void VillagerInfo::InitStats(Human* _human)
+void VillagerInfo::InitStats()
 {
-	StatsHuman* _stats = _human->GetStats();
+	StatsHuman* _stats = human->GetStats();
 	CreateTextStat(to_string(_stats->strength), 35.0f);
 	CreateTextStat(to_string(_stats->perception), 40.0f);
 	CreateTextStat(to_string(_stats->endurance), 45.0f);
 	CreateTextStat(to_string(_stats->charism), 50.0f);
 	CreateTextStat(to_string(_stats->agility), 55.0f);
 	CreateTextStat(to_string(_stats->luck), 60.0f);
-}
-
-void VillagerInfo::InitMentalHealth(Human* _human)
-{
-	StatsHuman* _stats = _human->GetStats();
 	CreateTextStat(to_string(_stats->mentalHealth) + "%", 75.0f);
 }
 
@@ -54,7 +52,7 @@ void VillagerInfo::CreateTextStat(const string& _text, const float& _positionX)
 
 void VillagerInfo::SetPositionY(const float& _positionY)
 {
-	villagerInfoShape->SetShapePosition(Vector2f(villagerInfoShape->GetShapePosition().x, _positionY));
+	villagerInfoShape->SetShapePosition(Vector2f(villagerInfoShape->GetShapePosition().x, _positionY + WINDOW_SIZE.y / 100.0f * 10.0f));
 	villagerHead->SetShapePosition(Vector2f(villagerHead->GetShapePosition().x, _positionY+ WINDOW_SIZE.y / 100.0f * 5.5f));
 
 	for (TextWidget* _text : villagerInfoText)
@@ -86,31 +84,27 @@ void VillagerList::Set3VillagerInfoPosition(const int& _scrole)
 
 void VillagerList::UpdateVillagerList()
 {
-	villagerList = vector<VillagerInfo*>();
 	Init();
 }
 
 void VillagerList::Init()
 {
-	int _index = 0;
 	for (int _i = 0; _i < PLAYERBUNKER->GetAllHuman().size(); _i++)
 	{
-		villagerList.push_back(new VillagerInfo(PLAYERBUNKER->GetAllHuman()[_i]));
-		villagerList[_i]->GetVillagerInfoShape()->GetShape()->setFillColor(Color(0,128,0));// vert foncé
-		if (_index==1)
+		if (villagerList.size()<= _i)
 		{
-			villagerList[_i]->GetVillagerInfoShape()->GetShape()->setFillColor(Color::Green);
+			villagerList.push_back(new VillagerInfo(PLAYERBUNKER->GetAllHuman()[_i]));
+			villagerList[_i]->GetVillagerInfoShape()->GetObject()->GetShape()->setFillColor(Color(0, 128, 0));// vert foncé
+			if (_i%2 == 0)
+			{
+				villagerList[_i]->GetVillagerInfoShape()->GetObject()->GetShape()->setFillColor(Color::Green);
+			}
+			continue;
 		}
-		if (_index==2)
-		{
-			villagerList[_i]->GetVillagerInfoShape()->GetShape()->setFillColor(Color::Red);
-			_index = -1;
-		}
-		_index++;
+		villagerList[_i]->SetvillagerInfoText(vector<TextWidget*>());
+		villagerList[_i]->InitStats();
 	}
 }
-
-
 
 VillagerInfoMenu::VillagerInfoMenu()
 {
@@ -120,6 +114,7 @@ VillagerInfoMenu::VillagerInfoMenu()
 	frameMenu = nullptr;
 	frameStatName = nullptr;
 	canvas = nullptr;
+	currentHuman = nullptr;
 	closedBuildMEnu = false;
 	scrole = 0;
 
@@ -137,6 +132,8 @@ void VillagerInfoMenu::Init()
 	InitButtons();
 	InitScrollBar();
 	InitStatsName();
+
+
 	canvas->SetVisibilityStatus(false);
 }
 
@@ -215,15 +212,9 @@ void VillagerInfoMenu::InitScrollBar()
 	canvas->AddWidget(handle);
 }
 
-void VillagerInfoMenu::Update()
+Human* VillagerInfoMenu::Update()
 {
-	// Quand tu scrolle la valeur scrole augment ou descend 
-	// sa affiche les valeur qui on comme index scrole, scrole+1 et scrole +2
-	// 3 possition predefini;
-	canvas->SetVisibilityStatus(true);
-	closedBuildMEnu = false;
-	villagerInfo->UpdateVillagerList();
-	handle->SetScrollAmount(PLAYERBUNKER->GetAllHuman().size() - 2);
+	UpdateInit();
 
 	while (WINDOW->isOpen())
 	{
@@ -232,11 +223,35 @@ void VillagerInfoMenu::Update()
 		if (closedBuildMEnu)
 		{
 			canvas->SetVisibilityStatus(false);
-			break;
+			return currentHuman;
 		}
 
 		UpdateWindow();
 	}
+}
+
+void VillagerInfoMenu::UpdateInit()
+{
+	closedBuildMEnu = false;
+	villagerInfo->UpdateVillagerList();
+	handle->SetScrollAmount(PLAYERBUNKER->GetAllHuman().size() - 2);
+
+
+	for (VillagerInfo* _villagerInfo : villagerInfo->GetVillagerList())
+	{
+		if (!_villagerInfo->GetVillagerInfoShape()->GetData().releasedCallback)
+		{
+			canvas->AddWidget(_villagerInfo->GetVillagerInfoShape());
+
+			_villagerInfo->GetVillagerInfoShape()->GetData().releasedCallback = [&]()
+			{
+				cout << villagerInfo->GetVillagerList()[0] << endl;
+				currentHuman = _villagerInfo->human;
+				closedBuildMEnu = true;
+			};
+		}
+	}
+	canvas->SetVisibilityStatus(true);
 }
 
 void VillagerInfoMenu::UpdateWindow()

@@ -41,6 +41,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyMovementComponent.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="ExpeditionMenu.cpp" />
     <ClCompile Include="FontData.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Food.cpp" />
@@ -119,6 +120,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyMovementComponent.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="ExpeditionMenu.h" />
     <ClInclude Include="FontData.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="Food.h" />

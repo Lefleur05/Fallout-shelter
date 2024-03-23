@@ -100,6 +100,9 @@
     <Filter Include="Source Files\ProgressBar">
       <UniqueIdentifier>{74871d36-bcd6-4fdc-a222-5e5d98be82a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Menu\ExpeditionMenu">
+      <UniqueIdentifier>{5e699937-8646-4ecc-88d3-de249469d1db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -330,6 +333,9 @@
     <ClCompile Include="DevUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ExpeditionMenu.cpp">
+      <Filter>Source Files\Menu\ExpeditionMenu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h">
@@ -556,6 +562,9 @@
     </ClInclude>
     <ClInclude Include="DevUtils.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpeditionMenu.h">
+      <Filter>Source Files\Menu\ExpeditionMenu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

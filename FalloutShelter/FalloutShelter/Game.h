@@ -10,6 +10,7 @@
 #include "TitleMenu.h"
 #include "BuildMenu.h"
 #include "VillagerInfoMenu.h"
+#include "ExpeditionMenu.h"
 #include "TextWidget.h"
 #include "ProgressBar.h"
 
@@ -23,6 +24,7 @@ class Game
 	TitleMenu* titleMenu;
 	BuildMenu* buildMenu;
 	VillagerInfoMenu* villagerInfoMenu;
+	ExpeditionMenu* expeditionMenu;
 
 	TextWidget* capsuleCount;
 	TextWidget* villagerCount;

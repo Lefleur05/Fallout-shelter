@@ -80,6 +80,11 @@ void Hall::InitButton(Shape* _shape, Vector2f _size)
 		AddRessourceType();
 		canvas->SetVisibilityStatus(false);
 		timerRessource->Start();
+
+		for (Human* _human: humans)
+		{
+			_human->GetStats()->mentalHealth--;
+		}
 	};
 
 	_buttonRessource->GetObject()->GetShape()->setFillColor(Color::Green);

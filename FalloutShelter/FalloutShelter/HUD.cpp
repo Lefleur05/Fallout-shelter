@@ -5,8 +5,9 @@
 
 void HUD::Interact(const Vector2f& _worldPosition, const Event& _event)
 {
-	for (Button* _button : buttons)
+	for (int _i = 0; _i < buttons.size(); _i++)
 	{
+		Button* _button = buttons[_i];
 		if (!_button->IsVisible())
 		{
 			continue;
