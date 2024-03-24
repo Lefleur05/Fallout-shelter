@@ -18,7 +18,7 @@ void HUD::Interact(const Vector2f& _worldPosition, const Event& _event)
 			if (_event.type == Event::MouseButtonPressed)
 			{
 				if (_button->OnPressed()) return;
-				cout << _worldPosition.x << " : " << _worldPosition.y << endl;
+				//cout << _worldPosition.x << " : " << _worldPosition.y << endl;
 			}
 			_button->OnHovered();
 		}

@@ -81,7 +81,7 @@ void BuildMenu::InitButtons()
 
 	_closeBuildMenu->GetData().releasedCallback = [&]()
 	{
-		cout << "close" << endl;
+		//cout << "close" << endl;
 		closedBuildMEnu = true;
 	};
 
@@ -100,7 +100,7 @@ void BuildMenu::InitButtons()
 	Button* _buttonElevator = new Button(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f * 20.5f, WINDOW_SIZE.y / 100.0f * 33.0f), Vector2f(_sizeXInMenu, _sizeYInMenu)), ButtonData());
 	_buttonElevator->GetData().releasedCallback = [&]()
 	{
-		cout << "_buttonElevator" << endl;
+		//cout << "_buttonElevator" << endl;
 	};
 
 	_buttonElevator->GetObject()->GetShape()->setFillColor(Color(0, 0, 0, 175));
@@ -120,7 +120,7 @@ void BuildMenu::InitButtons()
 	Button* _buttonLivingQuarters = new Button(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f * 20.5f, WINDOW_SIZE.y / 100.0f * 67.0f), Vector2f(_sizeXInMenu, _sizeYInMenu)), ButtonData());
 	_buttonLivingQuarters->GetData().releasedCallback = [&]()
 	{
-		cout << "_buttonLivingQuarters" << endl;
+		//cout << "_buttonLivingQuarters" << endl;
 	};
 	_buttonLivingQuarters->GetObject()->GetShape()->setFillColor(Color(0, 0, 0, 175));
 	_buttonLivingQuarters->GetObject()->GetShape()->setOutlineThickness(5.0f);
@@ -139,7 +139,7 @@ void BuildMenu::InitButtons()
 	Button* _buttonGenerator = new Button(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f * 50.0f, WINDOW_SIZE.y / 100.0f * 33.0f), Vector2f(_sizeXInMenu, _sizeYInMenu)), ButtonData());
 	_buttonGenerator->GetData().releasedCallback = [&]()
 	{
-		cout << "_buttonGenerator" << endl;
+		//cout << "_buttonGenerator" << endl;
 	};
 	_buttonGenerator->GetObject()->GetShape()->setFillColor(Color(0, 0, 0, 175));
 	_buttonGenerator->GetObject()->GetShape()->setOutlineThickness(5.0f);
@@ -158,7 +158,7 @@ void BuildMenu::InitButtons()
 	Button* _buttonWaterTreatement = new Button(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f * 50.0f, WINDOW_SIZE.y / 100.0f * 67.0f), Vector2f(_sizeXInMenu, _sizeYInMenu)), ButtonData());
 	_buttonWaterTreatement->GetData().releasedCallback = [&]()
 	{
-		cout << "_buttonWaterTreatement" << endl;
+		//cout << "_buttonWaterTreatement" << endl;
 	};
 	_buttonWaterTreatement->GetObject()->GetShape()->setFillColor(Color(0, 0, 0, 175));
 	_buttonWaterTreatement->GetObject()->GetShape()->setOutlineThickness(5.0f);
@@ -178,7 +178,7 @@ void BuildMenu::InitButtons()
 	Button* _buttonDiner = new Button(ShapeData(Vector2f(WINDOW_SIZE.x / 100.0f * 79.5f, WINDOW_SIZE.y / 100.0f * 33.0f), Vector2f(_sizeXInMenu, _sizeYInMenu)), ButtonData());
 	_buttonDiner->GetData().releasedCallback = [&]()
 	{
-		cout << "_buttonDiner" << endl;
+		//cout << "_buttonDiner" << endl;
 	};
 	_buttonDiner->GetObject()->GetShape()->setFillColor(Color(0, 0, 0, 175));
 	_buttonDiner->GetObject()->GetShape()->setOutlineThickness(5.0f);

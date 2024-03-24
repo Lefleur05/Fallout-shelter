@@ -55,7 +55,7 @@ void ExpeditionMenu::InitCloseButton()
 
 	_closeBuildMenu->GetData().releasedCallback = [&]()
 	{
-		cout << "close" << endl;
+		//cout << "close" << endl;
 		closedBuildMEnu = true;
 	};
 
@@ -80,7 +80,7 @@ void ExpeditionMenu::InitItemsButton()
 
 	_items->GetData().releasedCallback = [&]()
 	{
-		cout << "Open more Items " << endl;
+		//cout << "Open more Items " << endl;
 	};
 
 	TextureManager::GetInstance().Load(_items->GetObject()->GetShape(), "Assets/Texture/Items.png");
@@ -102,7 +102,7 @@ void ExpeditionMenu::InitEventButton()
 
 	_event->GetData().releasedCallback = [&]()
 	{
-		cout << "Open more Event " << endl;
+		//cout << "Open more Event " << endl;
 	};
 
 	TextureManager::GetInstance().Load(_event->GetObject()->GetShape(), "Assets/Texture/Event.png");

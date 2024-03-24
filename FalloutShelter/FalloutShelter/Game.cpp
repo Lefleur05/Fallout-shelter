@@ -135,7 +135,7 @@ void Game::InitButton()
 			_human->GetComponent<MovementComponent>()->SetCanMove(false);
 		}
 		canvas->SetVisibilityStatus(false);
-		cout << "mode build" << endl;
+		//cout << "mode build" << endl;
 		buildMenu->SetBackGround(MapManager::GetInstance().GetDrawables());		
 		buildMenu->Update();
 		

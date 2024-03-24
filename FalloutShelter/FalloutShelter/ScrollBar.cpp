@@ -51,7 +51,7 @@ void ScrollBar::ComputeClickOnBar(const Vector2f& _position)
 
 	//on calcule la position de la bar en fonction du pourcentage
 	const float _clickOnBar = (_pourcentage * scrollAmount - baseIndex - 10) * 10;
-	cout << round(_clickOnBar) << endl;
+	//cout << round(_clickOnBar) << endl;
 
 	//on met la bar au pourcentage
 	ComputeByIndex(_clickOnBar);

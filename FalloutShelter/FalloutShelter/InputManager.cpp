@@ -23,7 +23,7 @@ bool InputManager::Update(RenderWindow& _window)
 			const FloatRect _visibleArea(0.0f, 0.0f, _event.size.width, _event.size.height);
 			//const FloatRect _visibleArea(0.0f, 0.0f,0.0f, 0.0f);
 			_window.setView(View(_visibleArea));
-			cout << "resized" << endl;
+			//cout << "resized" << endl;
 		}
 		//HUD::GetInstance().Interact(worldPosition, _event.type);
 		HUD::GetInstance().Interact(worldPosition, _event);

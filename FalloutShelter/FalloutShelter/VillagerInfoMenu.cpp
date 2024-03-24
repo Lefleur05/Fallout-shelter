@@ -190,7 +190,7 @@ void VillagerInfoMenu::InitButtons()
 
 	_closeBuildMenu->GetData().releasedCallback = [&]()
 	{
-		cout << "close" << endl;
+		//cout << "close" << endl;
 		closedBuildMEnu = true;
 	};
 
