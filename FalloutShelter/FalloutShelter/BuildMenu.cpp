@@ -4,6 +4,7 @@
 #include "HUD.h"
 #include "Macro.h"
 #include "TextureManager.h"
+#include "TextWidget.h"
 
 BuildMenu::BuildMenu()
 {
@@ -101,9 +102,18 @@ void BuildMenu::InitButtons()
 	{
 		cout << "_buttonElevator" << endl;
 	};
-	_buttonElevator->GetObject()->GetShape()->setFillColor(Color::Green);
+
+	_buttonElevator->GetObject()->GetShape()->setFillColor(Color(0, 0, 0, 175));
+	_buttonElevator->GetObject()->GetShape()->setOutlineThickness(5.0f);
+	_buttonElevator->GetObject()->GetShape()->setOutlineColor(Color::Green);
 
 	canvas->AddWidget(_buttonElevator);
+
+	Vector2f _position = Vector2f(WINDOW_SIZE.x / 100.0f * 17.0f, WINDOW_SIZE.y / 100.0f * 30.0f);
+	TextWidget* _elevator = new TextWidget(TextData("Elevator", _position, "Overseer_Italic.otf", 30, Color::Green));
+
+	canvas->AddWidget(_elevator);
+
 	#pragma endregion
 
 	#pragma region _buttonLivingQuarters
@@ -112,9 +122,17 @@ void BuildMenu::InitButtons()
 	{
 		cout << "_buttonLivingQuarters" << endl;
 	};
-	_buttonLivingQuarters->GetObject()->GetShape()->setFillColor(Color::Green);
+	_buttonLivingQuarters->GetObject()->GetShape()->setFillColor(Color(0, 0, 0, 175));
+	_buttonLivingQuarters->GetObject()->GetShape()->setOutlineThickness(5.0f);
+	_buttonLivingQuarters->GetObject()->GetShape()->setOutlineColor(Color::Green);
 
 	canvas->AddWidget(_buttonLivingQuarters);
+
+	_position = Vector2f(WINDOW_SIZE.x / 100.0f * 14.0f, WINDOW_SIZE.y / 100.0f * 64.5f);
+	TextWidget* _livingQuarters = new TextWidget(TextData("Living Quarters", _position, "Overseer_Italic.otf", 30, Color::Green));
+
+	canvas->AddWidget(_livingQuarters);
+
 	#pragma endregion
 
 	#pragma region _buttonGenerator
@@ -123,9 +141,17 @@ void BuildMenu::InitButtons()
 	{
 		cout << "_buttonGenerator" << endl;
 	};
-	_buttonGenerator->GetObject()->GetShape()->setFillColor(Color::Green);
+	_buttonGenerator->GetObject()->GetShape()->setFillColor(Color(0, 0, 0, 175));
+	_buttonGenerator->GetObject()->GetShape()->setOutlineThickness(5.0f);
+	_buttonGenerator->GetObject()->GetShape()->setOutlineColor(Color::Green);
 
 	canvas->AddWidget(_buttonGenerator);
+
+	_position = Vector2f(WINDOW_SIZE.x / 100.0f * 45.5f, WINDOW_SIZE.y / 100.0f * 30.0f);
+	TextWidget* _generator = new TextWidget(TextData("Generator", _position, "Overseer_Italic.otf", 30, Color::Green));
+
+	canvas->AddWidget(_generator);
+
 	#pragma endregion
 
 	#pragma region _buttonWaterTreatement
@@ -134,9 +160,18 @@ void BuildMenu::InitButtons()
 	{
 		cout << "_buttonWaterTreatement" << endl;
 	};
-	_buttonWaterTreatement->GetObject()->GetShape()->setFillColor(Color::Green);
+	_buttonWaterTreatement->GetObject()->GetShape()->setFillColor(Color(0, 0, 0, 175));
+	_buttonWaterTreatement->GetObject()->GetShape()->setOutlineThickness(5.0f);
+	_buttonWaterTreatement->GetObject()->GetShape()->setOutlineColor(Color::Green);
 
 	canvas->AddWidget(_buttonWaterTreatement);
+
+
+	_position = Vector2f(WINDOW_SIZE.x / 100.0f * 42.5f, WINDOW_SIZE.y / 100.0f * 64.5f);
+	TextWidget* _waterTreatement = new TextWidget(TextData("Water Treatement", _position, "Overseer_Italic.otf", 30, Color::Green));
+
+	canvas->AddWidget(_waterTreatement);
+
 	#pragma endregion
 
 	#pragma region _buttonDiner
@@ -145,9 +180,17 @@ void BuildMenu::InitButtons()
 	{
 		cout << "_buttonDiner" << endl;
 	};
-	_buttonDiner->GetObject()->GetShape()->setFillColor(Color::Green);
+	_buttonDiner->GetObject()->GetShape()->setFillColor(Color(0, 0, 0, 175));
+	_buttonDiner->GetObject()->GetShape()->setOutlineThickness(5.0f);
+	_buttonDiner->GetObject()->GetShape()->setOutlineColor(Color::Green);
 
 	canvas->AddWidget(_buttonDiner);
+
+	_position = Vector2f(WINDOW_SIZE.x / 100.0f * 77.5f, WINDOW_SIZE.y / 100.0f * 30.0f);
+	TextWidget* _diner = new TextWidget(TextData("Diner", _position, "Overseer_Italic.otf", 30, Color::Green));
+
+	canvas->AddWidget(_diner);
+
 	#pragma endregion
 
 }

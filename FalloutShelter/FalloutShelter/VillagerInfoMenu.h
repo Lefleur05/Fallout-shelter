@@ -15,7 +15,6 @@ struct VillagerInfo
 	Button* villagerInfoShape;
 	ShapeObject* villagerHead;
 	vector<TextWidget*> villagerInfoText;
-
 	Human* human;
 
 public:

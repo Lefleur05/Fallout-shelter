@@ -7,6 +7,11 @@ class ExpeditionMenu
 	vector<Drawable*> backGround;
 
 	ShapeObject* frameMenu;
+	ShapeObject* frameBackgroundItem;
+	ShapeObject* frameBackgroundEvent;
+	ShapeObject* humanDraw;
+	TextWidget* capsuleCount;
+	int capsuleCountint;
 	Canvas* canvas;
 
 	Human* humanExpedition;
@@ -26,8 +31,15 @@ public:
 	void Init();
 	void InitBackGround();
 	void InitButtons();
-	void InitHumanExpedition();
+	void InitCloseButton();
+	void InitItemsButton();
+	void InitEventButton();
+	void InitframeMenu();
+	void InitframeBackgroundItem();
+	void IniframeBackgroundEvent();
+	void InitRessource();
 
+	void HumanExpedition();
 
 	void Update();
 	void UpdateWindow();

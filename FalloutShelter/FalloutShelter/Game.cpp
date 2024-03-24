@@ -37,8 +37,8 @@ void Game::Init()
 	canvas = new Canvas("Button");
 	InitMap();
 	InitUIInfo();
-	InitButton();
 	InitHuman();
+	InitButton();
 	InitGridNav();
 	InitZombie();
 	InitSpawner();

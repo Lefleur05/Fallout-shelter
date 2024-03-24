@@ -235,7 +235,7 @@ void VillagerInfoMenu::UpdateInit()
 	closedBuildMEnu = false;
 	villagerInfo->UpdateVillagerList();
 	handle->SetScrollAmount(PLAYERBUNKER->GetAllHuman().size() - 2);
-
+	int _index=0;
 
 	for (VillagerInfo* _villagerInfo : villagerInfo->GetVillagerList())
 	{
@@ -245,10 +245,13 @@ void VillagerInfoMenu::UpdateInit()
 
 			_villagerInfo->GetVillagerInfoShape()->GetData().releasedCallback = [&]()
 			{
-				cout << villagerInfo->GetVillagerList()[0] << endl;
-				currentHuman = _villagerInfo->human;
-				closedBuildMEnu = true;
+				/*cout << villagerInfo->GetVillagerList()[0] << endl;
+
+				currentHuman = villagerInfo->GetVillagerList()[_index]->human;
+
+				closedBuildMEnu = true;*/
 			};
+			_index++;
 		}
 	}
 	canvas->SetVisibilityStatus(true);
